@@ -7,6 +7,7 @@
 #> 定義類はここに
 # @within function asset:artifact/0002.blessing/trigger/**
     scoreboard objectives add 02.Trigger trigger
+    scoreboard objectives add 02.MaxUse dummy
     scoreboard objectives add 02.UseCount dummy
     scoreboard objectives add 02.MaxHealthSelectCount dummy
     scoreboard objectives add 02.MaxMPSelectCount dummy
@@ -21,3 +22,9 @@
 
 # 初期化
     scoreboard players set $BlessingUseCount Global 0
+
+# 最大値
+    scoreboard players set $1 02.MaxUse 30
+    scoreboard players set $2 02.MaxUse 30
+    scoreboard players set $3 02.MaxUse 30
+    scoreboard players set $4 02.MaxUse 30
