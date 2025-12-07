@@ -49,13 +49,13 @@
         execute if score @s 02.MaxHealthSelectCount >= $1 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
         execute if score @s 02.MaxMPSelectCount >= $2 02.MaxUse run data modify storage temp: Text.Select2 set value {"text":"[選ぶ]","color":"gray"}
         execute if score @s 02.MaxMPSelectCount >= $2 02.MaxUse run data modify storage temp: Text.Value2 set value {"text": "0", "color": "yellow"}
-        execute if score @s 02.MaxMPSelectCount >= $1 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
+        execute if score @s 02.MaxMPSelectCount >= $2 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
         execute if score @s 02.AttackSelectCount >= $3 02.MaxUse run data modify storage temp: Text.Select3 set value {"text":"[選ぶ]","color":"gray"}
         execute if score @s 02.AttackSelectCount >= $3 02.MaxUse run data modify storage temp: Text.Value3 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
-        execute if score @s 02.AttackSelectCount >= $1 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
+        execute if score @s 02.AttackSelectCount >= $3 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
         execute if score @s 02.DefenseSelectCount >= $4 02.MaxUse run data modify storage temp: Text.Select4 set value {"text":"[選ぶ]","color":"gray"}
         execute if score @s 02.DefenseSelectCount >= $4 02.MaxUse run data modify storage temp: Text.Value4 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
-        execute if score @s 02.DefenseSelectCount >= $1 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
+        execute if score @s 02.DefenseSelectCount >= $4 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
 
     # 実際のメッセージ
         data modify storage temp: Text.Message1 set value {"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f$6%s)", "with": [{"storage":"temp:","nbt":"Text.Select1","interpret": true},{"storage":"temp:","nbt":"Text.Name1","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value1","interpret": true},{"storage":"temp:","nbt":"Text.Score1","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue1","interpret": true}]}
@@ -64,7 +64,7 @@
         data modify storage temp: Text.Message4 set value {"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f$6%s)", "with": [{"storage":"temp:","nbt":"Text.Select4","interpret": true},{"storage":"temp:","nbt":"Text.Name4","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value4","interpret": true},{"storage":"temp:","nbt":"Text.Score4","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue4","interpret": true}]}
 
     # tellraw
-        tellraw @s {"translate": "%s\n%s\n%s\n%s", "with": [{"storage":"temp:","nbt":"Text.Message1","interpret": true}, {"storage":"temp:","nbt":"Text.Message2","interpret": true}, {"storage":"temp:","nbt":"Text.Message3","interpret": true}, {"storage":"temp:","nbt":"Text.Message4","interpret": true}]}
+        tellraw @s {"translate": "%1$s\n%2$s\n%3$s\n%4$s", "with": [{"storage":"temp:","nbt":"Text.Message1","interpret": true}, {"storage":"temp:","nbt":"Text.Message2","interpret": true}, {"storage":"temp:","nbt":"Text.Message3","interpret": true}, {"storage":"temp:","nbt":"Text.Message4","interpret": true}]}
 
     # execute if score @s 02.MaxHealthSelectCount matches 30.. run tellraw @s [{"text":"[選ぶ]","color":"gray"},{"text":" 体力","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"0","color":"yellow"},{"text":" (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.MaxHealthSelectBonusSum"},"color":"yellow"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"60)","color":"white"}]
     # execute if score @s 02.MaxHealthSelectCount matches ..29 run tellraw @s [{"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 1"},"color":"gold"},{"text":" 体力","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"2","color":"aqua"},{"text":" (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.MaxHealthSelectBonusSum"},"color":"aqua"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"60)","color":"white"}]
