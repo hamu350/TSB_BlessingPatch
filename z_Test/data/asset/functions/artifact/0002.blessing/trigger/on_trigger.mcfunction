@@ -35,3 +35,8 @@
     execute if score @s 02.Trigger matches 4 run function api:modifier/defense/base/update_bonus
 # リセット
     scoreboard players reset @s 02.Trigger
+
+# 祝福選択数
+    scoreboard players add @s 02.UseCount 1
+# まだ残っていれば選ばせる
+    execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat
