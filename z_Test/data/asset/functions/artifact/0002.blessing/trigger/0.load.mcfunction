@@ -13,12 +13,15 @@
     scoreboard objectives add 02.MaxMPSelectCount dummy
     scoreboard objectives add 02.AttackSelectCount dummy
     scoreboard objectives add 02.DefenseSelectCount dummy
+    scoreboard objectives add 02.FallResistanceSelectCount dummy
     scoreboard objectives add 02.MaxHealthSelectBonusSum dummy
     scoreboard objectives add 02.MaxMPSelectBonusSum dummy
+    scoreboard objectives add 02.FallResistanceSelectBonusSum dummy
     scoreboard objectives add 02.BonusHealth dummy
     scoreboard objectives add 02.BonusMP dummy
     scoreboard objectives add 02.BonusAttack dummy
     scoreboard objectives add 02.BonusDefense dummy
+    scoreboard objectives add 02.BonusFallResistance dummy
 
 # 初期化
     scoreboard players set $BlessingUseCount Global 0
@@ -28,3 +31,4 @@
     scoreboard players set $2 02.MaxUse 30
     scoreboard players set $3 02.MaxUse 30
     scoreboard players set $4 02.MaxUse 30
+    scoreboard players set $5 02.MaxUse 10
