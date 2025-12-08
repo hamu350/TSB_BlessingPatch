@@ -11,9 +11,11 @@
     scoreboard players set @s 02.SelectCount.03.Attack 0
     scoreboard players set @s 02.SelectCount.04.Defense 0
     scoreboard players set @s 02.SelectCount.05.FallResistance 0
-    scoreboard players set @s 02.SelectBonusSum.01.MaxHealthSelect 0
-    scoreboard players set @s 02.SelectBonusSum.02.MaxMPSelect 0
-    scoreboard players set @s 02.SelectBonusSum.05.FallResistanceSelect 0
+    scoreboard players set @s 02.SelectBonusSum.01.MaxHealth 0
+    scoreboard players set @s 02.SelectBonusSum.02.MaxMP 0
+    scoreboard players set @s 02.SelectBonusSum.03.Attack 0
+    scoreboard players set @s 02.SelectBonusSum.04.Defense 0
+    scoreboard players set @s 02.SelectBonusSum.05.FallResistance 0
     scoreboard players set @s 02.Bonus.01.Health 0
     scoreboard players set @s 02.Bonus.02.MP 0
     scoreboard players set @s 02.Bonus.03.Attack 0

@@ -22,7 +22,7 @@
 # 上昇量を掛けてから加算
     scoreboard players operation $Max Temporary *= $5 Const
     scoreboard players operation @s 02.Bonus.05.FallResistance += $Max Temporary
-    scoreboard players operation @s 02.SelectBonusSum.05.FallResistanceSelect += $Max Temporary
+    scoreboard players operation @s 02.SelectBonusSum.05.FallResistance += $Max Temporary
 
 # Update
     function api:modifier/fall_resistance/update_bonus

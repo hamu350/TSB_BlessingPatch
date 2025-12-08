@@ -22,7 +22,7 @@
 # 上昇量を掛けてから加算
     scoreboard players operation $Max Temporary *= $4 Const
     scoreboard players operation @s 02.Bonus.02.MP += $Max Temporary
-    scoreboard players operation @s 02.SelectBonusSum.02.MaxMPSelect += $Max Temporary
+    scoreboard players operation @s 02.SelectBonusSum.02.MaxMP += $Max Temporary
 
 # Update
     function api:modifier/max_mp/update_bonus
