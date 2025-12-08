@@ -29,3 +29,9 @@
 
 # 再取得
     execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat
+
+# vfx
+    # sound
+        playsound entity.arrow.hit_player master @a[distance=..16] ~ ~ ~ 1 0.5
+    # particle
+        particle end_rod ~ ~ ~ 3 3 3 0 500 force
