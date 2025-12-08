@@ -9,19 +9,19 @@
     scoreboard objectives add 02.Trigger trigger
     scoreboard objectives add 02.MaxUse dummy
     scoreboard objectives add 02.UseCount dummy
-    scoreboard objectives add 02.MaxHealthSelectCount dummy
-    scoreboard objectives add 02.MaxMPSelectCount dummy
-    scoreboard objectives add 02.AttackSelectCount dummy
-    scoreboard objectives add 02.DefenseSelectCount dummy
-    scoreboard objectives add 02.FallResistanceSelectCount dummy
-    scoreboard objectives add 02.MaxHealthSelectBonusSum dummy
-    scoreboard objectives add 02.MaxMPSelectBonusSum dummy
-    scoreboard objectives add 02.FallResistanceSelectBonusSum dummy
-    scoreboard objectives add 02.BonusHealth dummy
-    scoreboard objectives add 02.BonusMP dummy
-    scoreboard objectives add 02.BonusAttack dummy
-    scoreboard objectives add 02.BonusDefense dummy
-    scoreboard objectives add 02.BonusFallResistance dummy
+    scoreboard objectives add 02.SelectCount.01.MaxHealth dummy
+    scoreboard objectives add 02.SelectCount.02.MaxMP dummy
+    scoreboard objectives add 02.SelectCount.03.Attack dummy
+    scoreboard objectives add 02.SelectCount.04.Defense dummy
+    scoreboard objectives add 02.SelectCount.05.FallResistance dummy
+    scoreboard objectives add 02.SelectBonusSum.01.MaxHealthSelect dummy
+    scoreboard objectives add 02.SelectBonusSum.02.MaxMPSelect dummy
+    scoreboard objectives add 02.SelectBonusSum.05.FallResistanceSelect dummy
+    scoreboard objectives add 02.Bonus.01.Health dummy
+    scoreboard objectives add 02.Bonus.02.MP dummy
+    scoreboard objectives add 02.Bonus.03.Attack dummy
+    scoreboard objectives add 02.Bonus.04.Defense dummy
+    scoreboard objectives add 02.Bonus.05.FallResistance dummy
 
 # 初期化
     scoreboard players set $BlessingUseCount Global 0

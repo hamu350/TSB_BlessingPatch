@@ -11,17 +11,17 @@
     scoreboard players reset @s 02.Trigger
     scoreboard players enable @s 02.Trigger
 # 出力
-    execute unless score @s 02.MaxHealthSelectCount matches -2147483648..2147483647 run scoreboard players set @s 02.MaxHealthSelectCount 0
-    execute unless score @s 02.MaxMPSelectCount matches -2147483648..2147483647 run scoreboard players set @s 02.MaxMPSelectCount 0
-    execute unless score @s 02.AttackSelectCount matches -2147483648..2147483647 run scoreboard players set @s 02.AttackSelectCount 0
-    execute unless score @s 02.DefenseSelectCount matches -2147483648..2147483647 run scoreboard players set @s 02.DefenseSelectCount 0
-    execute unless score @s 02.FallResistanceSelectCount matches -2147483648..2147483647 run scoreboard players set @s 02.FallResistanceSelectCount 0
-    execute unless score @s 02.MaxHealthSelectBonusSum matches -2147483648..2147483647 run scoreboard players set @s 02.MaxHealthSelectBonusSum 0
-    execute unless score @s 02.MaxMPSelectBonusSum matches -2147483648..2147483647 run scoreboard players set @s 02.MaxMPSelectBonusSum 0
-    execute unless score @s 02.FallResistanceSelectBonusSum matches -2147483648..2147483647 run scoreboard players set @s 02.FallResistanceSelectBonusSum 0
-    execute unless score @s 02.BonusAttack matches -2147483648..2147483647 run scoreboard players set @s 02.BonusAttack 0
-    execute unless score @s 02.BonusDefense matches -2147483648..2147483647 run scoreboard players set @s 02.BonusDefense 0
-    execute unless score @s 02.BonusFallResistance matches -2147483648..2147483647 run scoreboard players set @s 02.BonusFallResistance 0
+    execute unless score @s 02.SelectCount.01.MaxHealth matches -2147483648..2147483647 run scoreboard players set @s 02.SelectCount.01.MaxHealth 0
+    execute unless score @s 02.SelectCount.02.MaxMP matches -2147483648..2147483647 run scoreboard players set @s 02.SelectCount.02.MaxMP 0
+    execute unless score @s 02.SelectCount.03.Attack matches -2147483648..2147483647 run scoreboard players set @s 02.SelectCount.03.Attack 0
+    execute unless score @s 02.SelectCount.04.Defense matches -2147483648..2147483647 run scoreboard players set @s 02.SelectCount.04.Defense 0
+    execute unless score @s 02.SelectCount.05.FallResistance matches -2147483648..2147483647 run scoreboard players set @s 02.SelectCount.05.FallResistance 0
+    execute unless score @s 02.SelectBonusSum.01.MaxHealthSelect matches -2147483648..2147483647 run scoreboard players set @s 02.SelectBonusSum.01.MaxHealthSelect 0
+    execute unless score @s 02.SelectBonusSum.02.MaxMPSelect matches -2147483648..2147483647 run scoreboard players set @s 02.SelectBonusSum.02.MaxMPSelect 0
+    execute unless score @s 02.SelectBonusSum.05.FallResistanceSelect matches -2147483648..2147483647 run scoreboard players set @s 02.SelectBonusSum.05.FallResistanceSelect 0
+    execute unless score @s 02.Bonus.03.Attack matches -2147483648..2147483647 run scoreboard players set @s 02.Bonus.03.Attack 0
+    execute unless score @s 02.Bonus.04.Defense matches -2147483648..2147483647 run scoreboard players set @s 02.Bonus.04.Defense 0
+    execute unless score @s 02.Bonus.05.FallResistance matches -2147483648..2147483647 run scoreboard players set @s 02.Bonus.05.FallResistance 0
 
 # text data
     data modify storage temp: Text set value {}
@@ -45,28 +45,28 @@
     data modify storage temp: Text.Name3 set value {"text": "攻撃", "color": "white"}
     data modify storage temp: Text.Name4 set value {"text": "防御", "color": "white"}
     data modify storage temp: Text.Name5 set value {"text": "落下耐性", "color": "white"}
-    data modify storage temp: Text.Score1 set value {"score": {"name": "@s","objective": "02.MaxHealthSelectBonusSum"},"color": "aqua"}
-    data modify storage temp: Text.Score2 set value {"score": {"name": "@s","objective": "02.MaxMPSelectCount"},"color": "aqua"}
-    data modify storage temp: Text.Score3 set value {"score": {"name": "@s","objective": "02.AttackSelectCount"},"color": "aqua"}
-    data modify storage temp: Text.Score4 set value {"score": {"name": "@s","objective": "02.DefenseSelectCount"},"color": "aqua"}
-    data modify storage temp: Text.Score5 set value {"score": {"name": "@s","objective": "02.FallResistanceSelectBonusSum"},"color": "aqua"}
+    data modify storage temp: Text.Score1 set value {"score": {"name": "@s","objective": "02.SelectBonusSum.01.MaxHealthSelect"},"color": "aqua"}
+    data modify storage temp: Text.Score2 set value {"score": {"name": "@s","objective": "02.SelectCount.02.MaxMP"},"color": "aqua"}
+    data modify storage temp: Text.Score3 set value {"score": {"name": "@s","objective": "02.SelectCount.03.Attack"},"color": "aqua"}
+    data modify storage temp: Text.Score4 set value {"score": {"name": "@s","objective": "02.SelectCount.04.Defense"},"color": "aqua"}
+    data modify storage temp: Text.Score5 set value {"score": {"name": "@s","objective": "02.SelectBonusSum.05.FallResistanceSelect"},"color": "aqua"}
 
     # 選択回数が最大取得数以上なら選択不能になる
-        execute if score @s 02.MaxHealthSelectCount >= $1 02.MaxUse run data modify storage temp: Text.Select1 set value {"text":"[選ぶ]","color":"gray"}
-        execute if score @s 02.MaxHealthSelectCount >= $1 02.MaxUse run data modify storage temp: Text.Value1 set value {"text": "0", "color": "yellow"}
-        execute if score @s 02.MaxHealthSelectCount >= $1 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
-        execute if score @s 02.MaxMPSelectCount >= $2 02.MaxUse run data modify storage temp: Text.Select2 set value {"text":"[選ぶ]","color":"gray"}
-        execute if score @s 02.MaxMPSelectCount >= $2 02.MaxUse run data modify storage temp: Text.Value2 set value {"text": "0", "color": "yellow"}
-        execute if score @s 02.MaxMPSelectCount >= $2 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
-        execute if score @s 02.AttackSelectCount >= $3 02.MaxUse run data modify storage temp: Text.Select3 set value {"text":"[選ぶ]","color":"gray"}
-        execute if score @s 02.AttackSelectCount >= $3 02.MaxUse run data modify storage temp: Text.Value3 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
-        execute if score @s 02.AttackSelectCount >= $3 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
-        execute if score @s 02.DefenseSelectCount >= $4 02.MaxUse run data modify storage temp: Text.Select4 set value {"text":"[選ぶ]","color":"gray"}
-        execute if score @s 02.DefenseSelectCount >= $4 02.MaxUse run data modify storage temp: Text.Value4 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
-        execute if score @s 02.DefenseSelectCount >= $4 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
-        execute if score @s 02.FallResistanceSelectCount >= $5 02.MaxUse run data modify storage temp: Text.Select5 set value {"text":"[選ぶ]","color":"gray"}
-        execute if score @s 02.FallResistanceSelectCount >= $5 02.MaxUse run data modify storage temp: Text.Value5 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
-        execute if score @s 02.FallResistanceSelectCount >= $5 02.MaxUse run data modify storage temp: Text.Score5."color" set value "yellow"
+        execute if score @s 02.SelectCount.01.MaxHealth >= $1 02.MaxUse run data modify storage temp: Text.Select1 set value {"text":"[選ぶ]","color":"gray"}
+        execute if score @s 02.SelectCount.01.MaxHealth >= $1 02.MaxUse run data modify storage temp: Text.Value1 set value {"text": "0", "color": "yellow"}
+        execute if score @s 02.SelectCount.01.MaxHealth >= $1 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
+        execute if score @s 02.SelectCount.02.MaxMP >= $2 02.MaxUse run data modify storage temp: Text.Select2 set value {"text":"[選ぶ]","color":"gray"}
+        execute if score @s 02.SelectCount.02.MaxMP >= $2 02.MaxUse run data modify storage temp: Text.Value2 set value {"text": "0", "color": "yellow"}
+        execute if score @s 02.SelectCount.02.MaxMP >= $2 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
+        execute if score @s 02.SelectCount.03.Attack >= $3 02.MaxUse run data modify storage temp: Text.Select3 set value {"text":"[選ぶ]","color":"gray"}
+        execute if score @s 02.SelectCount.03.Attack >= $3 02.MaxUse run data modify storage temp: Text.Value3 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
+        execute if score @s 02.SelectCount.03.Attack >= $3 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
+        execute if score @s 02.SelectCount.04.Defense >= $4 02.MaxUse run data modify storage temp: Text.Select4 set value {"text":"[選ぶ]","color":"gray"}
+        execute if score @s 02.SelectCount.04.Defense >= $4 02.MaxUse run data modify storage temp: Text.Value4 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
+        execute if score @s 02.SelectCount.04.Defense >= $4 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
+        execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.Select5 set value {"text":"[選ぶ]","color":"gray"}
+        execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.Value5 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
+        execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.Score5."color" set value "yellow"
 
     # 実際のメッセージ
         data modify storage temp: Text.Message1 set value '{"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f%6$s)", "with": [{"storage":"temp:","nbt":"Text.Select1","interpret": true},{"storage":"temp:","nbt":"Text.Name1","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value1","interpret": true},{"storage":"temp:","nbt":"Text.Score1","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue1","interpret": true}]}'
@@ -78,14 +78,14 @@
     # tellraw
         tellraw @s {"translate": "%1$s\n%2$s\n%3$s\n%4$s\n%5$s", "with": [{"storage":"temp:","nbt":"Text.Message1","interpret": true}, {"storage":"temp:","nbt":"Text.Message2","interpret": true}, {"storage":"temp:","nbt":"Text.Message3","interpret": true}, {"storage":"temp:","nbt":"Text.Message4","interpret": true}, {"storage":"temp:","nbt":"Text.Message5","interpret": true}]}
 
-    # execute if score @s 02.MaxHealthSelectCount matches 30.. run tellraw @s [{"text":"[選ぶ]","color":"gray"},{"text":" 体力","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"0","color":"yellow"},{"text":" (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.MaxHealthSelectBonusSum"},"color":"yellow"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"60)","color":"white"}]
-    # execute if score @s 02.MaxHealthSelectCount matches ..29 run tellraw @s [{"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 1"},"color":"gold"},{"text":" 体力","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"2","color":"aqua"},{"text":" (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.MaxHealthSelectBonusSum"},"color":"aqua"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"60)","color":"white"}]
-    # execute if score @s 02.MaxMPSelectCount matches 30.. run tellraw @s [{"text":"[選ぶ]","color":"gray"},{"text":" 魔力","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"0","color":"yellow"},{"text":" (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.MaxMPSelectBonusSum"},"color":"yellow"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"120)","color":"white"}]
-    # execute if score @s 02.MaxMPSelectCount matches ..29 run tellraw @s [{"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 2"},"color":"gold"},{"text":" 魔力","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"4","color":"aqua"},{"text":" (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.MaxMPSelectBonusSum"},"color":"aqua"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"120)","color":"white"}]
-    # execute if score @s 02.AttackSelectCount matches 30.. run tellraw @s [{"text":"[選ぶ]","color":"gray"},{"text":" 攻撃","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"0","color":"yellow"},{"text":"% (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.BonusAttack"},"color":"yellow"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"30%)","color":"white"}]
-    # execute if score @s 02.AttackSelectCount matches ..29 run tellraw @s [{"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 3"},"color":"gold"},{"text":" 攻撃","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"1","color":"aqua"},{"text":"% (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.BonusAttack"},"color":"aqua"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"30%)","color":"white"}]
-    # execute if score @s 02.DefenseSelectCount matches 30.. run tellraw @s [{"text":"[選ぶ]","color":"gray"},{"text":" 防御","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"0","color":"yellow"},{"text":"% (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.BonusDefense"},"color":"yellow"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"30%)","color":"white"}]
-    # execute if score @s 02.DefenseSelectCount matches ..29 run tellraw @s [{"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 4"},"color":"gold"},{"text":" 防御","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"1","color":"aqua"},{"text":"% (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.BonusDefense"},"color":"aqua"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"30%)","color":"white"}]
+    # execute if score @s 02.SelectCount.01.MaxHealth matches 30.. run tellraw @s [{"text":"[選ぶ]","color":"gray"},{"text":" 体力","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"0","color":"yellow"},{"text":" (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.SelectBonusSum.01.MaxHealthSelect"},"color":"yellow"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"60)","color":"white"}]
+    # execute if score @s 02.SelectCount.01.MaxHealth matches ..29 run tellraw @s [{"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 1"},"color":"gold"},{"text":" 体力","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"2","color":"aqua"},{"text":" (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.SelectBonusSum.01.MaxHealthSelect"},"color":"aqua"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"60)","color":"white"}]
+    # execute if score @s 02.SelectCount.02.MaxMP matches 30.. run tellraw @s [{"text":"[選ぶ]","color":"gray"},{"text":" 魔力","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"0","color":"yellow"},{"text":" (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.SelectBonusSum.02.MaxMPSelect"},"color":"yellow"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"120)","color":"white"}]
+    # execute if score @s 02.SelectCount.02.MaxMP matches ..29 run tellraw @s [{"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 2"},"color":"gold"},{"text":" 魔力","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"4","color":"aqua"},{"text":" (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.SelectBonusSum.02.MaxMPSelect"},"color":"aqua"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"120)","color":"white"}]
+    # execute if score @s 02.SelectCount.03.Attack matches 30.. run tellraw @s [{"text":"[選ぶ]","color":"gray"},{"text":" 攻撃","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"0","color":"yellow"},{"text":"% (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.Bonus.03.Attack"},"color":"yellow"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"30%)","color":"white"}]
+    # execute if score @s 02.SelectCount.03.Attack matches ..29 run tellraw @s [{"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 3"},"color":"gold"},{"text":" 攻撃","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"1","color":"aqua"},{"text":"% (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.Bonus.03.Attack"},"color":"aqua"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"30%)","color":"white"}]
+    # execute if score @s 02.SelectCount.04.Defense matches 30.. run tellraw @s [{"text":"[選ぶ]","color":"gray"},{"text":" 防御","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"0","color":"yellow"},{"text":"% (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.Bonus.04.Defense"},"color":"yellow"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"30%)","color":"white"}]
+    # execute if score @s 02.SelectCount.04.Defense matches ..29 run tellraw @s [{"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 4"},"color":"gold"},{"text":" 防御","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"1","color":"aqua"},{"text":"% (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.Bonus.04.Defense"},"color":"aqua"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"30%)","color":"white"}]
 
 # reset
     # data remove storage temp: Text

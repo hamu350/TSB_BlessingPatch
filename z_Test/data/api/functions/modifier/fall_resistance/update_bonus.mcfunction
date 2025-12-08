@@ -15,7 +15,7 @@
     function api:modifier/fall_resistance/remove
 
 # 差分にする
-    scoreboard players operation $Diff Temporary = @s 02.BonusFallResistance
+    scoreboard players operation $Diff Temporary = @s 02.Bonus.05.FallResistance
     execute store result score $RemovedAmount Temporary run data get storage api: Removed.Amount 100
     execute unless score $RemovedAmount Temporary matches -2147483648..2147483647 run scoreboard players set $RemovedAmount Temporary 0
     scoreboard players operation $Diff Temporary -= $RemovedAmount Temporary
@@ -31,7 +31,7 @@
 
 # 適用
     data modify storage api: Argument set value {Amount:-1,UUID:[I;1,1,2,0],Operation:"multiply_base"}
-    scoreboard players operation $Amount Temporary = @s 02.BonusFallResistance
-    execute store result storage api: Argument.Amount double 0.01 run scoreboard players get @s 02.BonusFallResistance
+    scoreboard players operation $Amount Temporary = @s 02.Bonus.05.FallResistance
+    execute store result storage api: Argument.Amount double 0.01 run scoreboard players get @s 02.Bonus.05.FallResistance
     function api:modifier/fall_resistance/add
     scoreboard players reset $Amount Temporary
