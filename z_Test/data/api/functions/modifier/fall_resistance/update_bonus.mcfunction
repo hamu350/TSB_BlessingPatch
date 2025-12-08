@@ -17,12 +17,8 @@
 # 差分にする
     scoreboard players operation $Diff Temporary = @s 02.BonusFallResistance
     execute store result score $RemovedAmount Temporary run data get storage api: Removed.Amount 100
-    tellraw @a {"score": {"name": "$RemovedAmount", "objective": "Temporary"}}
-    tellraw @a {"score": {"name": "$Diff", "objective": "Temporary"}}
-    tellraw @a {"storage": "api:", "nbt": "Removed.Amount"}
     execute unless score $RemovedAmount Temporary matches -2147483648..2147483647 run scoreboard players set $RemovedAmount Temporary 0
     scoreboard players operation $Diff Temporary -= $RemovedAmount Temporary
-    tellraw @a {"score": {"name": "$Diff", "objective": "Temporary"}}
 # 出力
     execute store result score $isNegative Temporary if score $Diff Temporary matches ..-1
     execute if score $isNegative Temporary matches 1 run scoreboard players operation $Diff Temporary *= $-1 Const
