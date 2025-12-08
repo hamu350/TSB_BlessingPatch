@@ -33,11 +33,11 @@
     data modify storage temp: Text.Select3 set value {"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 3"},"color":"gold"}
     data modify storage temp: Text.Select4 set value {"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 4"},"color":"gold"}
     data modify storage temp: Text.Select5 set value {"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 5"},"color":"gold"}
-    data modify storage temp: Text.SelectMax1 set value [{"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 101"},"color":"gold"}, {"text":"\\u0002","font":"space"}]
-    data modify storage temp: Text.SelectMax2 set value [{"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 102"},"color":"gold"}, {"text":"\\u0002","font":"space"}]
-    data modify storage temp: Text.SelectMax3 set value [{"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 103"},"color":"gold"}, {"text":"\\u0002","font":"space"}]
-    data modify storage temp: Text.SelectMax4 set value [{"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 104"},"color":"gold"}, {"text":"\\u0002","font":"space"}]
-    data modify storage temp: Text.SelectMax5 set value [{"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 105"},"color":"gold"}, {"text":"\\u0002","font":"space"}]
+    data modify storage temp: Text.SelectMax1 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 101"},"color":"gold"}]'
+    data modify storage temp: Text.SelectMax2 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 102"},"color":"gold"}]'
+    data modify storage temp: Text.SelectMax3 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 103"},"color":"gold"}]'
+    data modify storage temp: Text.SelectMax4 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 104"},"color":"gold"}]'
+    data modify storage temp: Text.SelectMax5 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 105"},"color":"gold"}]'
     data modify storage temp: Text.Value1 set value {"text": "2", "color": "aqua"}
     data modify storage temp: Text.Value2 set value {"text": "4", "color": "aqua"}
     data modify storage temp: Text.Value3 set value [{"text": "1", "color": "aqua"},{"text": "%", "color": "white"}]
@@ -61,26 +61,31 @@
 
     # 選択回数が最大取得数以上なら選択不能になる
         execute if score @s 02.SelectCount.01.MaxHealth >= $1 02.MaxUse run data modify storage temp: Text.Select1 set value {"text":"[選ぶ]","color":"gray"}
+        execute if score @s 02.SelectCount.01.MaxHealth >= $1 02.MaxUse run data modify storage temp: Text.SelectMax1 set value {"text": ""}
         execute if score @s 02.SelectCount.01.MaxHealth >= $1 02.MaxUse run data modify storage temp: Text.Value1 set value {"text": "0", "color": "yellow"}
         execute if score @s 02.SelectCount.01.MaxHealth >= $1 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
         execute if score @s 02.SelectCount.02.MaxMP >= $2 02.MaxUse run data modify storage temp: Text.Select2 set value {"text":"[選ぶ]","color":"gray"}
+        execute if score @s 02.SelectCount.02.MaxMP >= $2 02.MaxUse run data modify storage temp: Text.SelectMax2 set value {"text": ""}
         execute if score @s 02.SelectCount.02.MaxMP >= $2 02.MaxUse run data modify storage temp: Text.Value2 set value {"text": "0", "color": "yellow"}
         execute if score @s 02.SelectCount.02.MaxMP >= $2 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
         execute if score @s 02.SelectCount.03.Attack >= $3 02.MaxUse run data modify storage temp: Text.Select3 set value {"text":"[選ぶ]","color":"gray"}
+        execute if score @s 02.SelectCount.03.Attack >= $3 02.MaxUse run data modify storage temp: Text.SelectMax3 set value {"text": ""}
         execute if score @s 02.SelectCount.03.Attack >= $3 02.MaxUse run data modify storage temp: Text.Value3 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
         execute if score @s 02.SelectCount.03.Attack >= $3 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
         execute if score @s 02.SelectCount.04.Defense >= $4 02.MaxUse run data modify storage temp: Text.Select4 set value {"text":"[選ぶ]","color":"gray"}
+        execute if score @s 02.SelectCount.04.Defense >= $4 02.MaxUse run data modify storage temp: Text.SelectMax4 set value {"text": ""}
         execute if score @s 02.SelectCount.04.Defense >= $4 02.MaxUse run data modify storage temp: Text.Value4 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
         execute if score @s 02.SelectCount.04.Defense >= $4 02.MaxUse run data modify storage temp: Text.Score4."color" set value "yellow"
         execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.Select5 set value {"text":"[選ぶ]","color":"gray"}
+        execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.SelectMax5 set value {"text": ""}
         execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.Value5 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
         execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.Score5."color" set value "yellow"
     # 選択回数が1以下ならMAXは表示しない
-        execute if score @s 02.SelectCount.01.MaxHealth >= $1 02.MaxUse run data modify storage temp: Text.SelectMax1 set value {"text": ""}
-        execute if score @s 02.SelectCount.02.MaxMP >= $2 02.MaxUse run data modify storage temp: Text.SelectMax2 set value {"text": ""}
-        execute if score @s 02.SelectCount.03.Attack >= $3 02.MaxUse run data modify storage temp: Text.SelectMax3 set value {"text": ""}
-        execute if score @s 02.SelectCount.04.Defense >= $4 02.MaxUse run data modify storage temp: Text.SelectMax4 set value {"text": ""}
-        execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.SelectMax5 set value {"text": ""}
+        execute if score $Remain Temporary matches ..1 run data modify storage temp: Text.SelectMax1 set value {"text": ""}
+        execute if score $Remain Temporary matches ..1 run data modify storage temp: Text.SelectMax2 set value {"text": ""}
+        execute if score $Remain Temporary matches ..1 run data modify storage temp: Text.SelectMax3 set value {"text": ""}
+        execute if score $Remain Temporary matches ..1 run data modify storage temp: Text.SelectMax4 set value {"text": ""}
+        execute if score $Remain Temporary matches ..1 run data modify storage temp: Text.SelectMax5 set value {"text": ""}
 
     # 実際のメッセージ
         data modify storage temp: Text.Message1 set value '{"translate": "%1$s%2$s §f%3$s%4$s+%5$s §f(合計%4$s+%6$s%4$s/%4$s§f%7$s)", "with": [{"storage":"temp:","nbt":"Text.Select1","interpret": true},{"storage":"temp:","nbt":"Text.SelectMax1","interpret": true},{"storage":"temp:","nbt":"Text.Name1","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value1","interpret": true},{"storage":"temp:","nbt":"Text.Score1","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue1","interpret": true}]}'
