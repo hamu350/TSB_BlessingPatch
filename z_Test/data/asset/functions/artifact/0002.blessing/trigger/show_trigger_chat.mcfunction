@@ -33,11 +33,11 @@
     data modify storage temp: Text.Select3 set value {"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 3"},"color":"gold"}
     data modify storage temp: Text.Select4 set value {"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 4"},"color":"gold"}
     data modify storage temp: Text.Select5 set value {"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 5"},"color":"gold"}
-    data modify storage temp: Text.SelectMax1 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 101"},"color":"gold"}]'
-    data modify storage temp: Text.SelectMax2 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 102"},"color":"gold"}]'
-    data modify storage temp: Text.SelectMax3 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 103"},"color":"gold"}]'
-    data modify storage temp: Text.SelectMax4 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 104"},"color":"gold"}]'
-    data modify storage temp: Text.SelectMax5 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 105"},"color":"gold"}]'
+    data modify storage temp: Text.SelectMax1 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 101"},"color":"gold","font":"default"}]'
+    data modify storage temp: Text.SelectMax2 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 102"},"color":"gold","font":"default"}]'
+    data modify storage temp: Text.SelectMax3 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 103"},"color":"gold","font":"default"}]'
+    data modify storage temp: Text.SelectMax4 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 104"},"color":"gold","font":"default"}]'
+    data modify storage temp: Text.SelectMax5 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 105"},"color":"gold","font":"default"}]'
     data modify storage temp: Text.Value1 set value {"text": "2", "color": "aqua"}
     data modify storage temp: Text.Value2 set value {"text": "4", "color": "aqua"}
     data modify storage temp: Text.Value3 set value [{"text": "1", "color": "aqua"},{"text": "%", "color": "white"}]
