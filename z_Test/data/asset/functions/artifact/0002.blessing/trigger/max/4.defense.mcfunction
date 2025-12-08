@@ -13,6 +13,8 @@
     scoreboard players operation $Max Temporary -= @s 02.SelectCount.04.Defense
     scoreboard players operation $Max Temporary < $Remain Temporary
 
+# 使用回数を増やす
+    scoreboard players operation @s 02.UseCount += $Max Temporary
 # 加算
     scoreboard players operation @s 02.SelectCount.04.Defense += $Max Temporary
     scoreboard players operation @s 02.Bonus.04.Defense += $Max Temporary

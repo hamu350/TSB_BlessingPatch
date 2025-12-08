@@ -13,11 +13,14 @@
     scoreboard players operation $Max Temporary -= @s 02.SelectCount.05.FallResistance
     scoreboard players operation $Max Temporary < $Remain Temporary
 
+# 使用回数を増やす
+    scoreboard players operation @s 02.UseCount += $Max Temporary
+
 # 加算
     scoreboard players operation @s 02.SelectCount.02.MaxMP += $Max Temporary
 
 # 上昇量を掛けてから加算
-    scoreboard players operation $Max Temporary *= $5 Temporary
+    scoreboard players operation $Max Temporary *= $5 Const
     scoreboard players operation @s 02.Bonus.05.FallResistance += $Max Temporary
     scoreboard players operation @s 02.SelectBonusSum.05.FallResistanceSelect += $Max Temporary
 
