@@ -16,11 +16,13 @@
 
 # 差分にする
     scoreboard players operation $Diff Temporary = @s 02.BonusFallResistance
-    scoreboard players operation $Diff Temporary += $BonusFallResistance Global
     execute store result score $RemovedAmount Temporary run data get storage api: Removed.Amount 100
-    tellraw @a [{"score": {"name": "$RemovedAmount", "objective": "Temporary"}}, {"storage": "api:", "nbt": "Removed.Amount"}]
+    tellraw @a {"score": {"name": "$RemovedAmount", "objective": "Temporary"}}
+    tellraw @a {"score": {"name": "$Diff", "objective": "Temporary"}}
+    tellraw @a {"storage": "api:", "nbt": "Removed.Amount"}
     execute unless score $RemovedAmount Temporary matches -2147483648..2147483647 run scoreboard players set $RemovedAmount Temporary 0
     scoreboard players operation $Diff Temporary -= $RemovedAmount Temporary
+    tellraw @a {"score": {"name": "$Diff", "objective": "Temporary"}}
 # 出力
     execute store result score $isNegative Temporary if score $Diff Temporary matches ..-1
     execute if score $isNegative Temporary matches 1 run scoreboard players operation $Diff Temporary *= $-1 Const
@@ -34,6 +36,6 @@
 # 適用
     data modify storage api: Argument set value {Amount:-1,UUID:[I;1,1,2,0],Operation:"multiply_base"}
     scoreboard players operation $Amount Temporary = @s 02.BonusFallResistance
-    execute store result storage api: Argument.Amount double 0.01 run scoreboard players operation $Amount Temporary += $BonusFallResistance Global
+    execute store result storage api: Argument.Amount double 0.01 run scoreboard players get @s 02.BonusFallResistance
     function api:modifier/fall_resistance/add
     scoreboard players reset $Amount Temporary
