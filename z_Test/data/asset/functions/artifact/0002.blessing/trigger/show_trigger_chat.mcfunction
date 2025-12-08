@@ -44,10 +44,10 @@
     # data modify storage temp: Text.SelectMax4 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 104"},"color":"gold","font":"default"}]'
     # data modify storage temp: Text.SelectMax5 set value '[{"text":"\\u0002","font":"space"}, {"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 105"},"color":"gold","font":"default"}]'
     data modify storage temp: Text.Value1 set value {"score": {"name": "$1", "objective": "02.Value"}, "color": "aqua"}
-    data modify storage temp: Text.Value2 set value {"score": {"name": "$1", "objective": "02.Value"}, "color": "aqua"}
-    data modify storage temp: Text.Value3 set value [{"score": {"name": "$1", "objective": "02.Value"}, "color": "aqua"},{"text": "%", "color": "white"}]
-    data modify storage temp: Text.Value4 set value [{"score": {"name": "$1", "objective": "02.Value"}, "color": "aqua"},{"text": "%", "color": "white"}]
-    data modify storage temp: Text.Value5 set value [{"score": {"name": "$1", "objective": "02.Value"}, "color": "aqua"},{"text": "%", "color": "white"}]
+    data modify storage temp: Text.Value2 set value {"score": {"name": "$2", "objective": "02.Value"}, "color": "aqua"}
+    data modify storage temp: Text.Value3 set value [{"score": {"name": "$3", "objective": "02.Value"}, "color": "aqua"},{"text": "%", "color": "white"}]
+    data modify storage temp: Text.Value4 set value [{"score": {"name": "$4", "objective": "02.Value"}, "color": "aqua"},{"text": "%", "color": "white"}]
+    data modify storage temp: Text.Value5 set value [{"score": {"name": "$5", "objective": "02.Value"}, "color": "aqua"},{"text": "%", "color": "white"}]
     data modify storage temp: Text.MaxValue1 set value {"score": {"name": "$1", "objective": "02.MaxValue"}, "color": "aqua"}
     data modify storage temp: Text.MaxValue2 set value {"score": {"name": "$2", "objective": "02.MaxValue"}, "color": "aqua"}
     data modify storage temp: Text.MaxValue3 set value {"score": {"name": "$3", "objective": "02.MaxValue"}, "color": "aqua"}
