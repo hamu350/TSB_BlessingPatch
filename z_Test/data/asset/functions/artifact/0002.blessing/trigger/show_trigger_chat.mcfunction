@@ -88,7 +88,7 @@
     # execute if score @s 02.DefenseSelectCount matches ..29 run tellraw @s [{"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 4"},"color":"gold"},{"text":" 防御","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"1","color":"aqua"},{"text":"% (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.BonusDefense"},"color":"aqua"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"30%)","color":"white"}]
 
 # reset
-    data remove storage temp: Text
+    # data remove storage temp: Text
 
 # リスナー
     schedule function asset:artifact/0002.blessing/trigger/listener 1t
