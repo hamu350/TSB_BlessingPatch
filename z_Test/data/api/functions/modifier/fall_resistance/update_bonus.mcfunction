@@ -17,7 +17,7 @@
 # 差分にする
     scoreboard players operation $Diff Temporary = @s 02.BonusFallResistance
     scoreboard players operation $Diff Temporary += $BonusFallResistance Global
-    execute store result score $RemovedAmount Temporary run data get storage api: Removed.Amount 1
+    execute store result score $RemovedAmount Temporary run data get storage api: Removed.Amount 100
     execute unless score $RemovedAmount Temporary matches -2147483648..2147483647 run scoreboard players set $RemovedAmount Temporary 0
     scoreboard players operation $Diff Temporary -= $RemovedAmount Temporary
 # 出力
