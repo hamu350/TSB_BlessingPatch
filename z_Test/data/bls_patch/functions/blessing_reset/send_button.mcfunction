@@ -6,7 +6,7 @@
 
 tellraw @s {"text":""}
 
-data modify storage api: Argument.Label set value '"ゲーム設定を開く"'
+data modify storage api: Argument.Label set value '"祝福バフをリセットする"'
 data modify storage api: Argument.Key set value "blessing_reset"
 data modify storage api: Argument.Listener set value "bls_patch:blessing_reset/"
 function api:button/send
