@@ -15,13 +15,13 @@
     execute unless score @s 02.MaxMPSelectCount matches -2147483648..2147483647 run scoreboard players set @s 02.MaxMPSelectCount 0
     execute unless score @s 02.AttackSelectCount matches -2147483648..2147483647 run scoreboard players set @s 02.AttackSelectCount 0
     execute unless score @s 02.DefenseSelectCount matches -2147483648..2147483647 run scoreboard players set @s 02.DefenseSelectCount 0
-    execute unless score @s 02.FallResistanceSelectCount matches -2147483648..2147483647 run scoreboard players set @s 02.BonusDefense 0
+    execute unless score @s 02.FallResistanceSelectCount matches -2147483648..2147483647 run scoreboard players set @s 02.FallResistanceSelectCount 0
     execute unless score @s 02.MaxHealthSelectBonusSum matches -2147483648..2147483647 run scoreboard players set @s 02.MaxHealthSelectBonusSum 0
     execute unless score @s 02.MaxMPSelectBonusSum matches -2147483648..2147483647 run scoreboard players set @s 02.MaxMPSelectBonusSum 0
-    execute unless score @s 02.FallResistanceSelectBonusSum matches -2147483648..2147483647 run scoreboard players set @s 02.BonusDefense 0
+    execute unless score @s 02.FallResistanceSelectBonusSum matches -2147483648..2147483647 run scoreboard players set @s 02.FallResistanceSelectBonusSum 0
     execute unless score @s 02.BonusAttack matches -2147483648..2147483647 run scoreboard players set @s 02.BonusAttack 0
     execute unless score @s 02.BonusDefense matches -2147483648..2147483647 run scoreboard players set @s 02.BonusDefense 0
-    execute unless score @s 02.BonusFallResistance matches -2147483648..2147483647 run scoreboard players set @s 02.BonusDefense 0
+    execute unless score @s 02.BonusFallResistance matches -2147483648..2147483647 run scoreboard players set @s 02.BonusFallResistance 0
 
 # text data
     data modify storage temp: Text set value {}
@@ -73,7 +73,7 @@
         data modify storage temp: Text.Message2 set value '{"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f%6$s)", "with": [{"storage":"temp:","nbt":"Text.Select2","interpret": true},{"storage":"temp:","nbt":"Text.Name2","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value2","interpret": true},{"storage":"temp:","nbt":"Text.Score2","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue2","interpret": true}]}'
         data modify storage temp: Text.Message3 set value '{"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f%6$s)", "with": [{"storage":"temp:","nbt":"Text.Select3","interpret": true},{"storage":"temp:","nbt":"Text.Name3","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value3","interpret": true},{"storage":"temp:","nbt":"Text.Score3","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue3","interpret": true}]}'
         data modify storage temp: Text.Message4 set value '{"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f%6$s)", "with": [{"storage":"temp:","nbt":"Text.Select4","interpret": true},{"storage":"temp:","nbt":"Text.Name4","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value4","interpret": true},{"storage":"temp:","nbt":"Text.Score4","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue4","interpret": true}]}'
-        data modify storage temp: Text.Message5 set value '{"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f%6$s)", "with": [{"storage":"temp:","nbt":"Text.Select5","interpret": true},{"storage":"temp:","nbt":"Text.Name5","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value4","interpret": true},{"storage":"temp:","nbt":"Text.Score5","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue5","interpret": true}]}'
+        data modify storage temp: Text.Message5 set value '{"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f%6$s)", "with": [{"storage":"temp:","nbt":"Text.Select5","interpret": true},{"storage":"temp:","nbt":"Text.Name5","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value5","interpret": true},{"storage":"temp:","nbt":"Text.Score5","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue5","interpret": true}]}'
 
     # tellraw
         tellraw @s {"translate": "%1$s\n%2$s\n%3$s\n%4$s\n%5$s", "with": [{"storage":"temp:","nbt":"Text.Message1","interpret": true}, {"storage":"temp:","nbt":"Text.Message2","interpret": true}, {"storage":"temp:","nbt":"Text.Message3","interpret": true}, {"storage":"temp:","nbt":"Text.Message4","interpret": true}, {"storage":"temp:","nbt":"Text.Message5","interpret": true}]}
