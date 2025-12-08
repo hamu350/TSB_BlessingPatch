@@ -41,10 +41,10 @@
     data modify storage temp: Text.MaxValue4 set value {"text": "30", "color": "aqua"}
     data modify storage temp: Text.MaxValue5 set value {"text": "50", "color": "aqua"}
     data modify storage temp: Text.Name1 set value {"text": "体力", "color": "white"}
-    data modify storage temp: Text.Name2 set value {"text": "魔力", "color": "yellow"}
-    data modify storage temp: Text.Name3 set value {"text": "攻撃", "color": "yellow"}
-    data modify storage temp: Text.Name4 set value {"text": "防御", "color": "yellow"}
-    data modify storage temp: Text.Name5 set value {"text": "落下耐性", "color": "yellow"}
+    data modify storage temp: Text.Name2 set value {"text": "魔力", "color": "white"}
+    data modify storage temp: Text.Name3 set value {"text": "攻撃", "color": "white"}
+    data modify storage temp: Text.Name4 set value {"text": "防御", "color": "white"}
+    data modify storage temp: Text.Name5 set value {"text": "落下耐性", "color": "white"}
     data modify storage temp: Text.Score1 set value {"score": {"name": "@s","objective": "02.MaxHealthSelectBonusSum"},"color": "aqua"}
     data modify storage temp: Text.Score2 set value {"score": {"name": "@s","objective": "02.MaxMPSelectCount"},"color": "aqua"}
     data modify storage temp: Text.Score3 set value {"score": {"name": "@s","objective": "02.AttackSelectCount"},"color": "aqua"}
