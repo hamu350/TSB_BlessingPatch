@@ -5,7 +5,10 @@
 # @within function asset:artifact/0002.blessing/trigger/*
 
 # 出力
-    tellraw @s {"text":"能力ボーナスを一つ選んでください"}
+    scoreboard players operation $Remain Temporary = $BlessingUseCount Global
+    scoreboard players operation $Remain Temporary -= @s 02.UseCount
+    execute if score $Remain Temporary matches ..1 run tellraw @s {"text":"能力ボーナスを一つ選んでください"}
+    execute unless score $Remain Temporary matches ..1 run tellraw @s [{"text":"能力ボーナスを一つ選んでください 残り祝福："}, {"score": {"name": "$Remain", "objective": "Temporary"}}]
 
 # 選択トリガー
     scoreboard players reset @s 02.Trigger
@@ -30,6 +33,11 @@
     data modify storage temp: Text.Select3 set value {"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 3"},"color":"gold"}
     data modify storage temp: Text.Select4 set value {"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 4"},"color":"gold"}
     data modify storage temp: Text.Select5 set value {"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 5"},"color":"gold"}
+    data modify storage temp: Text.SelectMax1 set value [{"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 101"},"color":"gold"}, {"text":"\\u0002","font":"space"}]
+    data modify storage temp: Text.SelectMax2 set value [{"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 102"},"color":"gold"}, {"text":"\\u0002","font":"space"}]
+    data modify storage temp: Text.SelectMax3 set value [{"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 103"},"color":"gold"}, {"text":"\\u0002","font":"space"}]
+    data modify storage temp: Text.SelectMax4 set value [{"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 104"},"color":"gold"}, {"text":"\\u0002","font":"space"}]
+    data modify storage temp: Text.SelectMax5 set value [{"text":"[MAX]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 105"},"color":"gold"}, {"text":"\\u0002","font":"space"}]
     data modify storage temp: Text.Value1 set value {"text": "2", "color": "aqua"}
     data modify storage temp: Text.Value2 set value {"text": "4", "color": "aqua"}
     data modify storage temp: Text.Value3 set value [{"text": "1", "color": "aqua"},{"text": "%", "color": "white"}]
@@ -67,13 +75,19 @@
         execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.Select5 set value {"text":"[選ぶ]","color":"gray"}
         execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.Value5 set value [{"text": "0", "color": "yellow"},{"text": "%", "color": "white"}]
         execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.Score5."color" set value "yellow"
+    # 選択回数が1以下ならMAXは表示しない
+        execute if score @s 02.SelectCount.01.MaxHealth >= $1 02.MaxUse run data modify storage temp: Text.SelectMax1 set value {"text": ""}
+        execute if score @s 02.SelectCount.02.MaxMP >= $2 02.MaxUse run data modify storage temp: Text.SelectMax2 set value {"text": ""}
+        execute if score @s 02.SelectCount.03.Attack >= $3 02.MaxUse run data modify storage temp: Text.SelectMax3 set value {"text": ""}
+        execute if score @s 02.SelectCount.04.Defense >= $4 02.MaxUse run data modify storage temp: Text.SelectMax4 set value {"text": ""}
+        execute if score @s 02.SelectCount.05.FallResistance >= $5 02.MaxUse run data modify storage temp: Text.SelectMax5 set value {"text": ""}
 
     # 実際のメッセージ
-        data modify storage temp: Text.Message1 set value '{"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f%6$s)", "with": [{"storage":"temp:","nbt":"Text.Select1","interpret": true},{"storage":"temp:","nbt":"Text.Name1","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value1","interpret": true},{"storage":"temp:","nbt":"Text.Score1","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue1","interpret": true}]}'
-        data modify storage temp: Text.Message2 set value '{"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f%6$s)", "with": [{"storage":"temp:","nbt":"Text.Select2","interpret": true},{"storage":"temp:","nbt":"Text.Name2","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value2","interpret": true},{"storage":"temp:","nbt":"Text.Score2","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue2","interpret": true}]}'
-        data modify storage temp: Text.Message3 set value '{"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f%6$s)", "with": [{"storage":"temp:","nbt":"Text.Select3","interpret": true},{"storage":"temp:","nbt":"Text.Name3","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value3","interpret": true},{"storage":"temp:","nbt":"Text.Score3","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue3","interpret": true}]}'
-        data modify storage temp: Text.Message4 set value '{"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f%6$s)", "with": [{"storage":"temp:","nbt":"Text.Select4","interpret": true},{"storage":"temp:","nbt":"Text.Name4","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value4","interpret": true},{"storage":"temp:","nbt":"Text.Score4","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue4","interpret": true}]}'
-        data modify storage temp: Text.Message5 set value '{"translate": "%1$s §f%2$s%3$s+%4$s §f(合計%3$s+%5$s%3$s/%3$s§f%6$s)", "with": [{"storage":"temp:","nbt":"Text.Select5","interpret": true},{"storage":"temp:","nbt":"Text.Name5","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value5","interpret": true},{"storage":"temp:","nbt":"Text.Score5","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue5","interpret": true}]}'
+        data modify storage temp: Text.Message1 set value '{"translate": "%1$s%2$s §f%3$s%4$s+%5$s §f(合計%4$s+%6$s%4$s/%4$s§f%7$s)", "with": [{"storage":"temp:","nbt":"Text.Select1","interpret": true},{"storage":"temp:","nbt":"Text.SelectMax1","interpret": true},{"storage":"temp:","nbt":"Text.Name1","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value1","interpret": true},{"storage":"temp:","nbt":"Text.Score1","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue1","interpret": true}]}'
+        data modify storage temp: Text.Message2 set value '{"translate": "%1$s%2$s §f%3$s%4$s+%5$s §f(合計%4$s+%6$s%4$s/%4$s§f%7$s)", "with": [{"storage":"temp:","nbt":"Text.Select2","interpret": true},{"storage":"temp:","nbt":"Text.SelectMax2","interpret": true},{"storage":"temp:","nbt":"Text.Name2","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value2","interpret": true},{"storage":"temp:","nbt":"Text.Score2","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue2","interpret": true}]}'
+        data modify storage temp: Text.Message3 set value '{"translate": "%1$s%2$s §f%3$s%4$s+%5$s §f(合計%4$s+%6$s%4$s/%4$s§f%7$s)", "with": [{"storage":"temp:","nbt":"Text.Select3","interpret": true},{"storage":"temp:","nbt":"Text.SelectMax3","interpret": true},{"storage":"temp:","nbt":"Text.Name3","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value3","interpret": true},{"storage":"temp:","nbt":"Text.Score3","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue3","interpret": true}]}'
+        data modify storage temp: Text.Message4 set value '{"translate": "%1$s%2$s §f%3$s%4$s+%5$s §f(合計%4$s+%6$s%4$s/%4$s§f%7$s)", "with": [{"storage":"temp:","nbt":"Text.Select4","interpret": true},{"storage":"temp:","nbt":"Text.SelectMax4","interpret": true},{"storage":"temp:","nbt":"Text.Name4","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value4","interpret": true},{"storage":"temp:","nbt":"Text.Score4","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue4","interpret": true}]}'
+        data modify storage temp: Text.Message5 set value '{"translate": "%1$s%2$s §f%3$s%4$s+%5$s §f(合計%4$s+%6$s%4$s/%4$s§f%7$s)", "with": [{"storage":"temp:","nbt":"Text.Select5","interpret": true},{"storage":"temp:","nbt":"Text.SelectMax5","interpret": true},{"storage":"temp:","nbt":"Text.Name5","interpret": true},{"text":"\\u0002","font":"space"},{"storage":"temp:","nbt":"Text.Value5","interpret": true},{"storage":"temp:","nbt":"Text.Score5","interpret": true},{"storage":"temp:","nbt":"Text.MaxValue5","interpret": true}]}'
 
     # tellraw
         tellraw @s {"translate": "%1$s\n%2$s\n%3$s\n%4$s\n%5$s", "with": [{"storage":"temp:","nbt":"Text.Message1","interpret": true}, {"storage":"temp:","nbt":"Text.Message2","interpret": true}, {"storage":"temp:","nbt":"Text.Message3","interpret": true}, {"storage":"temp:","nbt":"Text.Message4","interpret": true}, {"storage":"temp:","nbt":"Text.Message5","interpret": true}]}
@@ -88,7 +102,8 @@
     # execute if score @s 02.SelectCount.04.Defense matches ..29 run tellraw @s [{"text":"[選ぶ]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 4"},"color":"gold"},{"text":" 防御","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"text":"1","color":"aqua"},{"text":"% (合計","color":"white"},{"text":"\u0002","font":"space"},{"text":"+","color":"white"},{"score":{"name": "@s","objective":"02.Bonus.04.Defense"},"color":"aqua"},{"text":"\u0002","font":"space"},{"text":"/","color":"white"},{"text":"\u0002","font":"space"},{"text":"30%)","color":"white"}]
 
 # reset
-    # data remove storage temp: Text
+    data remove storage temp: Text
+    scoreboard players reset $Remain Temporary
 
 # リスナー
     schedule function asset:artifact/0002.blessing/trigger/listener 1t

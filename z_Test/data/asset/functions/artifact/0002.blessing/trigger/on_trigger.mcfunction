@@ -5,8 +5,8 @@
 # @within function asset:artifact/0002.blessing/trigger/listener
 
 # エラー値
-    execute unless score @s 02.Trigger matches 1..5 run function lib:message/invalid_operation
-    execute unless score @s 02.Trigger matches 1..5 run return run function asset:artifact/0002.blessing/trigger/show_trigger_chat
+    execute unless score @s 02.Trigger matches 1..105 run function lib:message/invalid_operation
+    execute unless score @s 02.Trigger matches 1..105 run return run function asset:artifact/0002.blessing/trigger/show_trigger_chat
 # 1 体力
     execute if score @s 02.Trigger matches 1 if score @s 02.SelectCount.01.MaxHealth >= $1 02.MaxUse run tellraw @s [{"text":"上限を超えてステータスを上げることは出来ません","color":"red"}]
     execute if score @s 02.Trigger matches 1 if score @s 02.SelectCount.01.MaxHealth >= $1 02.MaxUse run return run function asset:artifact/0002.blessing/trigger/show_trigger_chat
@@ -40,10 +40,12 @@
     execute if score @s 02.Trigger matches 5 run scoreboard players add @s 02.SelectBonusSum.05.FallResistanceSelect 5
     execute if score @s 02.Trigger matches 5 run scoreboard players add @s 02.SelectCount.05.FallResistance 1
     execute if score @s 02.Trigger matches 5 run function api:modifier/fall_resistance/update_bonus
+# 101~ MAX
+    execute if score @s 02.Trigger matches 101.. run function asset:artifact/0002.blessing/trigger/max/
+# 祝福選択数
+    execute if score @s 02.Trigger matches 1..5 run scoreboard players add @s 02.UseCount 1
 # リセット
     scoreboard players reset @s 02.Trigger
 
-# 祝福選択数
-    execute unless score @s 02.Trigger matches 1..5 run scoreboard players add @s 02.UseCount 1
-# まだ残っていれば選ばせる
-    execute unless score @s 02.Trigger matches 1..5 run execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat
+# 祝福がまだ残っていれば選ばせる
+    execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat
