@@ -15,7 +15,7 @@
     function api:modifier/max_mp/remove
 
 # 差分にする
-    scoreboard players operation $Diff Temporary = @s 02.Bonus.02.MP
+    scoreboard players operation $Diff Temporary = @s 02.Bonus.02
     scoreboard players operation $Diff Temporary += $BonusMP Global
     execute store result score $RemovedAmount Temporary run data get storage api: Removed.Amount 1
     execute unless score $RemovedAmount Temporary matches -2147483648..2147483647 run scoreboard players set $RemovedAmount Temporary 0
@@ -32,7 +32,7 @@
 
 # 適用
     data modify storage api: Argument set value {Amount:-1,UUID:[I;1,1,2,0],Operation:"add"}
-    scoreboard players operation $Amount Temporary = @s 02.Bonus.02.MP
+    scoreboard players operation $Amount Temporary = @s 02.Bonus.02
     execute store result storage api: Argument.Amount double 1 run scoreboard players operation $Amount Temporary += $BonusMP Global
     function api:modifier/max_mp/add
     scoreboard players reset $Amount Temporary

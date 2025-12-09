@@ -1,16 +1,14 @@
-#> asset:artifact/0002.blessing/trigger/max/
+say #> asset:artifact/0002.blessing/trigger/max/
 #
 # 
 #
 # @within function asset:artifact/0002.blessing/trigger/on_trigger
 
-# 101
-    execute if score @s 02.Trigger matches 101 run function asset:artifact/0002.blessing/trigger/max/1.max_health
-# 102
-    execute if score @s 02.Trigger matches 102 run function asset:artifact/0002.blessing/trigger/max/2.max_mp
-# 103
-    execute if score @s 02.Trigger matches 103 run function asset:artifact/0002.blessing/trigger/max/3.attack
-# 104
-    execute if score @s 02.Trigger matches 104 run function asset:artifact/0002.blessing/trigger/max/4.defense
-# 105
-    execute if score @s 02.Trigger matches 105 run function asset:artifact/0002.blessing/trigger/max/5.fall_resistance
+# Args.ID = f"{ID-100:>2}"
+# Args.UpdatePath = bls_patch: Blessing.{ID}.UpdatePath
+    execute store result storage bls_patch: Args.Trigger int 1 run scoreboard players remove @s 02.Trigger 100
+    function asset:artifact/0002.blessing/trigger/get_id.m with storage bls_patch: Args
+
+execute if data storage bls_patch: Args.ID if data storage bls_patch: Args.UpdatePath run function asset:artifact/0002.blessing/trigger/max/m with storage bls_patch: Args
+data modify storage temp: Args set from storage bls_patch: Args
+data remove storage bls_patch: Args
