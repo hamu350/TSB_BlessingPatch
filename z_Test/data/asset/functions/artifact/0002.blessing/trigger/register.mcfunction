@@ -51,6 +51,7 @@
 
 
 # ボーナスの増やし方
+# ./0.load.mcfのscoreを増やす
 # 上にあるscore等を増やす
 # update functionを作る
 # ./show_trigger_chat.mcfのscore checkとmacro、tellrawを増やす
