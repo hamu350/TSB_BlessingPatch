@@ -19,12 +19,10 @@
     execute unless score @s 02.SelectCount.02 matches -2147483648..2147483647 run scoreboard players set @s 02.SelectCount.02 0
     execute unless score @s 02.SelectCount.03 matches -2147483648..2147483647 run scoreboard players set @s 02.SelectCount.03 0
     execute unless score @s 02.SelectCount.04 matches -2147483648..2147483647 run scoreboard players set @s 02.SelectCount.04 0
-    execute unless score @s 02.SelectCount.05 matches -2147483648..2147483647 run scoreboard players set @s 02.SelectCount.05 0
     execute unless score @s 02.Bonus.01 matches -2147483648..2147483647 run scoreboard players set @s 02.Bonus.01 0
     execute unless score @s 02.Bonus.02 matches -2147483648..2147483647 run scoreboard players set @s 02.Bonus.02 0
     execute unless score @s 02.Bonus.03 matches -2147483648..2147483647 run scoreboard players set @s 02.Bonus.03 0
     execute unless score @s 02.Bonus.04 matches -2147483648..2147483647 run scoreboard players set @s 02.Bonus.04 0
-    execute unless score @s 02.Bonus.05 matches -2147483648..2147483647 run scoreboard players set @s 02.Bonus.05 0
 
 # 出力
     # マクロでテキストデータを入力
@@ -40,12 +38,9 @@
     # 04: Defense
         data modify storage bls_patch: Args.ID set value "04"
         function asset:artifact/0002.blessing/trigger/show_trigger_chat.m with storage bls_patch: Args
-    # 05: FallResistance
-        data modify storage bls_patch: Args.ID set value "05"
-        function asset:artifact/0002.blessing/trigger/show_trigger_chat.m with storage bls_patch: Args
 
     # tellraw
-        tellraw @s {"translate": "%1$s\n%2$s\n%3$s\n%4$s\n%5$s", "with": [{"storage":"bls_patch:","nbt":"Text.Message.01","interpret": true}, {"storage":"bls_patch:","nbt":"Text.Message.02","interpret": true}, {"storage":"bls_patch:","nbt":"Text.Message.03","interpret": true}, {"storage":"bls_patch:","nbt":"Text.Message.04","interpret": true}, {"storage":"bls_patch:","nbt":"Text.Message.05","interpret": true}]}
+        tellraw @s {"translate": "%1$s\n%2$s\n%3$s\n%4$s", "with": [{"storage":"bls_patch:","nbt":"Text.Message.01","interpret": true}, {"storage":"bls_patch:","nbt":"Text.Message.02","interpret": true}, {"storage":"bls_patch:","nbt":"Text.Message.03","interpret": true}, {"storage":"bls_patch:","nbt":"Text.Message.04","interpret": true}]}
 
 # reset
     data remove storage bls_patch: Args

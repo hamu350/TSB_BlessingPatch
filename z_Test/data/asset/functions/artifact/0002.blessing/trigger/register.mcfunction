@@ -15,31 +15,26 @@
     data modify storage bls_patch: Blessing.02.Name set value {"text": "魔力"}
     data modify storage bls_patch: Blessing.03.Name set value {"text": "攻撃"}
     data modify storage bls_patch: Blessing.04.Name set value {"text": "防御"}
-    data modify storage bls_patch: Blessing.05.Name set value {"text": "落下耐性"}
 # Update Path
     data modify storage bls_patch: Blessing.01.UpdatePath set value "api:modifier/max_health/update_bonus"
     data modify storage bls_patch: Blessing.02.UpdatePath set value "api:modifier/max_mp/update_bonus"
     data modify storage bls_patch: Blessing.03.UpdatePath set value "api:modifier/attack/base/update_bonus"
     data modify storage bls_patch: Blessing.04.UpdatePath set value "api:modifier/defense/base/update_bonus"
-    data modify storage bls_patch: Blessing.05.UpdatePath set value "api:modifier/fall_resistance/update_bonus"
 # Value Suffix
     data modify storage bls_patch: Blessing.01.ValueSuffix set value {"text": ""}
     data modify storage bls_patch: Blessing.02.ValueSuffix set value {"text": ""}
     data modify storage bls_patch: Blessing.03.ValueSuffix set value {"text": "%"}
     data modify storage bls_patch: Blessing.04.ValueSuffix set value {"text": "%"}
-    data modify storage bls_patch: Blessing.05.ValueSuffix set value {"text": "%"}
 # 増加量
     scoreboard players set $Blessing.01 02.Value 2
     scoreboard players set $Blessing.02 02.Value 4
     scoreboard players set $Blessing.03 02.Value 1
     scoreboard players set $Blessing.04 02.Value 1
-    scoreboard players set $Blessing.05 02.Value 5
 # 最大選択数
     scoreboard players set $Blessing.01 02.MaxUse 30
     scoreboard players set $Blessing.02 02.MaxUse 30
     scoreboard players set $Blessing.03 02.MaxUse 30
     scoreboard players set $Blessing.04 02.MaxUse 30
-    scoreboard players set $Blessing.05 02.MaxUse 10
 # 最大値
     # 01
         scoreboard players operation $Blessing.01 02.MaxValue = $Blessing.01 02.Value
@@ -53,13 +48,11 @@
     # 04
         scoreboard players operation $Blessing.04 02.MaxValue = $Blessing.04 02.Value
         scoreboard players operation $Blessing.04 02.MaxValue *= $Blessing.04 02.MaxUse
-    # 05
-        scoreboard players operation $Blessing.05 02.MaxValue = $Blessing.05 02.Value
-        scoreboard players operation $Blessing.05 02.MaxValue *= $Blessing.05 02.MaxUse
 
 
 # ボーナスの増やし方
 # 上にあるscore等を増やす
 # update functionを作る
 # ./show_trigger_chat.mcfのscore checkとmacro、tellrawを増やす
+# bls_patch:blessing_reset/のUpdateを増やす
 # おわり

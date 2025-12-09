@@ -22,7 +22,6 @@
     function api:modifier/max_mp/update_bonus
     function api:modifier/attack/base/update_bonus
     function api:modifier/defense/base/update_bonus
-    function api:modifier/fall_resistance/update_bonus
 
 # 再取得
     execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat

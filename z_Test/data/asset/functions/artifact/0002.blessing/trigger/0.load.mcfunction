@@ -16,12 +16,10 @@
     scoreboard objectives add 02.SelectCount.02 dummy
     scoreboard objectives add 02.SelectCount.03 dummy
     scoreboard objectives add 02.SelectCount.04 dummy
-    scoreboard objectives add 02.SelectCount.05 dummy
     scoreboard objectives add 02.Bonus.01 dummy
     scoreboard objectives add 02.Bonus.02 dummy
     scoreboard objectives add 02.Bonus.03 dummy
     scoreboard objectives add 02.Bonus.04 dummy
-    scoreboard objectives add 02.Bonus.05 dummy
 
 # 初期化
     scoreboard players set $BlessingUseCount Global 0
