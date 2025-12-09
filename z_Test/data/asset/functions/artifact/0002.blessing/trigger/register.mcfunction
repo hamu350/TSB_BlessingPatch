@@ -8,7 +8,6 @@
 # 02: MaxMP
 # 03: Attack
 # 04: Defense
-# 05: FallResistance
 
 # 名前
     data modify storage bls_patch: Blessing.01.Name set value {"text": "体力"}

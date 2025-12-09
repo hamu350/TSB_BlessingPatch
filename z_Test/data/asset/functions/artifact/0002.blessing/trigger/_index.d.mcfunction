@@ -8,5 +8,4 @@
     #declare score_holder $Blessing.02
     #declare score_holder $Blessing.03
     #declare score_holder $Blessing.04
-    #declare score_holder $Blessing.05
     #declare score_holder $BlessingUseCount
