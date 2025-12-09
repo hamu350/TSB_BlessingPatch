@@ -9,3 +9,7 @@
 神々の肖像画がある部屋にて可能です
 - 祝福による能力ボーナスの一括振り分け</br>
 祝福を一度に何個か使用した際や、リセットした時などにボーナスを可能な限り振り分けられます
+
+
+## 導入方法
+現在TSB Blessing Patchは公開されていませんが、[TSB Blessing Patch Basic v1.0.1](https://github.com/hamu350/TSB_BlessingPatch/releases/tag/Basic_v1.0.1) が公開中です
