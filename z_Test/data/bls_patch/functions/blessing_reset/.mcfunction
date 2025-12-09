@@ -10,12 +10,10 @@
     scoreboard players set @s 02.SelectCount.02 0
     scoreboard players set @s 02.SelectCount.03 0
     scoreboard players set @s 02.SelectCount.04 0
-    scoreboard players set @s 02.SelectCount.05 0
     scoreboard players set @s 02.Bonus.01 0
     scoreboard players set @s 02.Bonus.02 0
     scoreboard players set @s 02.Bonus.03 0
     scoreboard players set @s 02.Bonus.04 0
-    scoreboard players set @s 02.Bonus.05 0
 
 # status reset
     function api:modifier/max_health/update_bonus
