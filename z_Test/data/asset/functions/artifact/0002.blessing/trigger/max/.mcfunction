@@ -1,4 +1,4 @@
-say #> asset:artifact/0002.blessing/trigger/max/
+#> asset:artifact/0002.blessing/trigger/max/
 #
 # 
 #
