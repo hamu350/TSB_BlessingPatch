@@ -42,5 +42,7 @@
 # リセット
     scoreboard players reset @s 02.Trigger
 
+# 祝福が残っていなければ祝福バフ表示ボタンを送信
+    execute unless score @s 02.UseCount < $BlessingUseCount Global run function bls_patch:blessing_view/send_button
 # 祝福がまだ残っていれば選ばせる
     execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat/
