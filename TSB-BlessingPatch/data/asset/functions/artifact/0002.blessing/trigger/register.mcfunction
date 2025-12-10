@@ -14,10 +14,10 @@
 # 08: ReceiveHeal
 
 # ID(表示順)
-    data modify storage bls_patch: ID set value ["01", "02", "03", "09", "10", "04", "05", "06", "07", "08"]
+    data modify storage bls_patch: ID set value ["01", "02", "03", "09", "10", "04", "11", "12", "05", "06", "07", "08"]
 
 # Bonusの総数+1([ID]で取得できるように1つずらす)
-    data modify storage bls_patch: Reset set value [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    data modify storage bls_patch: Reset set value [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 # Name: 名前
 # Update Path: ステータス更新用のPath
@@ -105,3 +105,19 @@
     data modify storage bls_patch: Blessing.10.ValueSuffix set value "%"
     data modify storage bls_patch: Blessing.10.MaxValue set value 20
     data modify storage bls_patch: Blessing.10.MaxUse set value 10
+
+# 11: Physical Attack
+    data modify storage bls_patch: Blessing.11.Name set value "物理防御"
+    data modify storage bls_patch: Blessing.11.UpdatePath set value "api:modifier/defense/physical/update_bonus"
+    data modify storage bls_patch: Blessing.11.Value set value 2
+    data modify storage bls_patch: Blessing.11.ValueSuffix set value "%"
+    data modify storage bls_patch: Blessing.11.MaxValue set value 20
+    data modify storage bls_patch: Blessing.11.MaxUse set value 10
+
+# 12: Magic Attack
+    data modify storage bls_patch: Blessing.12.Name set value "魔法防御"
+    data modify storage bls_patch: Blessing.12.UpdatePath set value "api:modifier/defense/magic/update_bonus"
+    data modify storage bls_patch: Blessing.12.Value set value 2
+    data modify storage bls_patch: Blessing.12.ValueSuffix set value "%"
+    data modify storage bls_patch: Blessing.12.MaxValue set value 20
+    data modify storage bls_patch: Blessing.12.MaxUse set value 10
