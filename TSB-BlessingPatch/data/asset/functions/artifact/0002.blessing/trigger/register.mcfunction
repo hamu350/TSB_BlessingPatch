@@ -9,12 +9,13 @@
 # 03: Attack
 # 04: Defense
 # 05: FallResistance
+# 06: MPRegen
 
 # ID(表示順)
-    data modify storage bls_patch: ID set value ["01", "02", "03", "04", "05"]
+    data modify storage bls_patch: ID set value ["01", "02", "03", "04", "05", "06"]
 
 # Bonusの総数+1([ID]で取得できるように1つずらす)
-    data modify storage bls_patch: Reset set value [-1, 0, 0, 0, 0, 0]
+    data modify storage bls_patch: Reset set value [-1, 0, 0, 0, 0, 0, 0]
 
 # Name: 名前
 # Update Path: ステータス更新用のPath
@@ -62,3 +63,11 @@
     data modify storage bls_patch: Blessing.05.ValueSuffix set value "%"
     data modify storage bls_patch: Blessing.05.MaxValue set value 50
     data modify storage bls_patch: Blessing.05.MaxUse set value 10
+
+# 06: MPRegen
+    data modify storage bls_patch: Blessing.06.Name set value "MP回復量"
+    data modify storage bls_patch: Blessing.06.UpdatePath set value "api:modifier/mp_regen/update_bonus"
+    data modify storage bls_patch: Blessing.06.Value set value 1
+    data modify storage bls_patch: Blessing.06.ValueSuffix set value "%"
+    data modify storage bls_patch: Blessing.06.MaxValue set value 10
+    data modify storage bls_patch: Blessing.06.MaxUse set value 10
