@@ -12,4 +12,4 @@
     data remove storage bls_patch: Loop
 
 # 再表示
-    function bls_patch:blessing_reset/send_button
+    execute if predicate world_manager:area/01-00.gate_island run function bls_patch:blessing_reset/send_button
