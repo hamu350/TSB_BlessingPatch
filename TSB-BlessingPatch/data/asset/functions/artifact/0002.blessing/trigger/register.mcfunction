@@ -16,6 +16,8 @@
 # ID(表示順)
     data modify storage bls_patch: ID set value ["01", "02", "03", "04"]
     data modify storage bls_patch: SecondID set value ["09", "10", "11", "12", "05", "07", "08", "06"]
+    data modify storage bls_patch: All set from storage bls_patch: ID
+    data modify storage bls_patch: All append from storage bls_patch: SecondID[]
 
 # Bonusの総数+1([ID]で取得できるように1つずらす)
     data modify storage bls_patch: Reset set value [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
