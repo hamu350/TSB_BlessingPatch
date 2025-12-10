@@ -14,7 +14,8 @@
 # 08: ReceiveHeal
 
 # ID(表示順)
-    data modify storage bls_patch: ID set value ["01", "07", "08", "02", "06", "03", "09", "10", "04", "11", "12", "05"]
+    data modify storage bls_patch: ID set value ["01", "02", "03", "04"]
+    data modify storage bls_patch: SecondID set value ["09", "10", "11", "12", "05", "07", "08", "06"]
 
 # Bonusの総数+1([ID]で取得できるように1つずらす)
     data modify storage bls_patch: Reset set value [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -59,7 +60,8 @@
     data modify storage bls_patch: Blessing.04.MaxUse set value 10
 
 # 05: FallResistance
-    data modify storage bls_patch: Blessing.05.Name set value '[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"落下耐性","font":"default"}]'
+    # data modify storage bls_patch: Blessing.05.Name set value ##'[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"落下耐性","font":"default"}]'
+    data modify storage bls_patch: Blessing.05.Name set value '"落下耐性"'
     data modify storage bls_patch: Blessing.05.UpdatePath set value "api:modifier/fall_resistance/update_bonus"
     data modify storage bls_patch: Blessing.05.Value set value 5
     data modify storage bls_patch: Blessing.05.ValueSuffix set value "%"
@@ -67,7 +69,8 @@
     data modify storage bls_patch: Blessing.05.MaxUse set value 10
 
 # 06: MPRegen
-    data modify storage bls_patch: Blessing.06.Name set value '[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"MP回復量","font":"default"}]'
+    # data modify storage bls_patch: Blessing.06.Name set value ##'[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"MP回復量","font":"default"}]'
+    data modify storage bls_patch: Blessing.06.Name set value '"MP回復量"'
     data modify storage bls_patch: Blessing.06.UpdatePath set value "api:modifier/mp_regen/update_bonus"
     data modify storage bls_patch: Blessing.06.Value set value 1
     data modify storage bls_patch: Blessing.06.ValueSuffix set value "%"
@@ -75,7 +78,8 @@
     data modify storage bls_patch: Blessing.06.MaxUse set value 10
 
 # 07: Heal
-    data modify storage bls_patch: Blessing.07.Name set value '[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"与回復量","font":"default"}]'
+    # data modify storage bls_patch: Blessing.07.Name set value ##'[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"与回復量","font":"default"}]'
+    data modify storage bls_patch: Blessing.07.Name set value '"与回復量"'
     data modify storage bls_patch: Blessing.07.UpdatePath set value "api:modifier/heal/update_bonus"
     data modify storage bls_patch: Blessing.07.Value set value 1
     data modify storage bls_patch: Blessing.07.ValueSuffix set value "%"
@@ -83,7 +87,8 @@
     data modify storage bls_patch: Blessing.07.MaxUse set value 10
 
 # 08: ReceiveHeal
-    data modify storage bls_patch: Blessing.08.Name set value '[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"被回復量","font":"default"}]'
+    # data modify storage bls_patch: Blessing.08.Name set value ##'[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"被回復量","font":"default"}]'
+    data modify storage bls_patch: Blessing.08.Name set value '"被回復量"'
     data modify storage bls_patch: Blessing.08.UpdatePath set value "api:modifier/receive_heal/update_bonus"
     data modify storage bls_patch: Blessing.08.Value set value 2
     data modify storage bls_patch: Blessing.08.ValueSuffix set value "%"
@@ -91,7 +96,8 @@
     data modify storage bls_patch: Blessing.08.MaxUse set value 10
 
 # 09: Physical Attack
-    data modify storage bls_patch: Blessing.09.Name set value '[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"物理攻撃","font":"default"}]'
+    # data modify storage bls_patch: Blessing.09.Name set value ##'[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"物理攻撃","font":"default"}]'
+    data modify storage bls_patch: Blessing.09.Name set value '"物理攻撃"'
     data modify storage bls_patch: Blessing.09.UpdatePath set value "api:modifier/attack/physical/update_bonus"
     data modify storage bls_patch: Blessing.09.Value set value 2
     data modify storage bls_patch: Blessing.09.ValueSuffix set value "%"
@@ -99,7 +105,8 @@
     data modify storage bls_patch: Blessing.09.MaxUse set value 10
 
 # 10: Magic Attack
-    data modify storage bls_patch: Blessing.10.Name set value '[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"魔法攻撃","font":"default"}]'
+    # data modify storage bls_patch: Blessing.10.Name set value ##'[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"魔法攻撃","font":"default"}]'
+    data modify storage bls_patch: Blessing.10.Name set value '"魔法攻撃"'
     data modify storage bls_patch: Blessing.10.UpdatePath set value "api:modifier/attack/magic/update_bonus"
     data modify storage bls_patch: Blessing.10.Value set value 2
     data modify storage bls_patch: Blessing.10.ValueSuffix set value "%"
@@ -107,7 +114,8 @@
     data modify storage bls_patch: Blessing.10.MaxUse set value 10
 
 # 11: Physical Attack
-    data modify storage bls_patch: Blessing.11.Name set value '[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"物理防御","font":"default"}]'
+    # data modify storage bls_patch: Blessing.11.Name set value ##'[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"物理防御","font":"default"}]'
+    data modify storage bls_patch: Blessing.11.Name set value '"物理防御"'
     data modify storage bls_patch: Blessing.11.UpdatePath set value "api:modifier/defense/physical/update_bonus"
     data modify storage bls_patch: Blessing.11.Value set value 2
     data modify storage bls_patch: Blessing.11.ValueSuffix set value "%"
@@ -115,7 +123,8 @@
     data modify storage bls_patch: Blessing.11.MaxUse set value 10
 
 # 12: Magic Attack
-    data modify storage bls_patch: Blessing.12.Name set value '[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"魔法防御","font":"default"}]'
+    # data modify storage bls_patch: Blessing.12.Name set value ##'[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"魔法防御","font":"default"}]'
+    data modify storage bls_patch: Blessing.12.Name set value '"魔法防御"'
     data modify storage bls_patch: Blessing.12.UpdatePath set value "api:modifier/defense/magic/update_bonus"
     data modify storage bls_patch: Blessing.12.Value set value 2
     data modify storage bls_patch: Blessing.12.ValueSuffix set value "%"

@@ -1,8 +1,8 @@
-#> asset:artifact/0002.blessing/trigger/show_trigger_chat/
+#> asset:artifact/0002.blessing/trigger/show_trigger_chat/second
 #
+# 
 #
-#
-# @within function asset:artifact/0002.blessing/trigger/*
+# @within function asset:artifact/0002.blessing/trigger/show_trigger_chat/
 
 # 出力
     scoreboard players operation $Remain Temporary = $BlessingUseCount Global
@@ -15,11 +15,11 @@
     scoreboard players enable @s 02.Trigger
 
 # ループ処理
-    data modify storage bls_patch: Loop set from storage bls_patch: ID
+    data modify storage bls_patch: Loop set from storage bls_patch: SecondID
     function asset:artifact/0002.blessing/trigger/show_trigger_chat/loop
 
 # ページ切り替え
-    tellraw @s {"translate": "%1$s", "with": [{"text":"[追加ボーナスを開く]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 201"},"color":"gold"}]}
+    tellraw @s {"translate": "%1$s", "with": [{"text":"[通常ボーナスを開く]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 200"},"color":"gold"}]}
 
 # reset
     scoreboard players reset $Remain Temporary
