@@ -2,7 +2,7 @@
 #
 # 
 #
-# @within function core:handler/first_join
+# @within function bls_patch:first_join
 
 tellraw @s [{"text": "----------", "color": "white"},{"text":"TSB Blessing Patch", "color": "gold"},{"text":"----------", "color": "white"}]
 tellraw @s {"text": ""}

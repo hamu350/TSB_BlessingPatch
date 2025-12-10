@@ -6,16 +6,11 @@
 
 # score reset
     scoreboard players set @s 02.UseCount 0
-    scoreboard players set @s 02.SelectCount.01 0
-    scoreboard players set @s 02.SelectCount.02 0
-    scoreboard players set @s 02.SelectCount.03 0
-    scoreboard players set @s 02.SelectCount.04 0
-    scoreboard players set @s 02.SelectCount.05 0
-    scoreboard players set @s 02.Bonus.01 0
-    scoreboard players set @s 02.Bonus.02 0
-    scoreboard players set @s 02.Bonus.03 0
-    scoreboard players set @s 02.Bonus.04 0
-    scoreboard players set @s 02.Bonus.05 0
+
+# storage reset
+    function oh_my_dat:please
+    data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.SelectCount set from storage bls_patch: Reset
+    data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.Bonus set from storage bls_patch: Reset
 
 # status reset
     function api:modifier/max_health/update_bonus
@@ -25,7 +20,7 @@
     function api:modifier/fall_resistance/update_bonus
 
 # 再取得
-    execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat
+    execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat/
 
 # vfx
     # sound

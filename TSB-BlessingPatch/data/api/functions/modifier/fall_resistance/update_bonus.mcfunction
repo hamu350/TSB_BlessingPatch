@@ -15,7 +15,9 @@
     function api:modifier/fall_resistance/remove
 
 # 差分にする
-    scoreboard players operation $Diff Temporary = @s 02.Bonus.05
+    function oh_my_dat:please
+    execute store result score $Bonus Temporary run data get storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.Bonus[05]
+    scoreboard players operation $Diff Temporary = $Bonus Temporary
     execute store result score $RemovedAmount Temporary run data get storage api: Removed.Amount 100
     execute unless score $RemovedAmount Temporary matches -2147483648..2147483647 run scoreboard players set $RemovedAmount Temporary 0
     scoreboard players operation $Diff Temporary -= $RemovedAmount Temporary
@@ -24,14 +26,14 @@
     execute if score $isNegative Temporary matches 1 run scoreboard players operation $Diff Temporary *= $-1 Const
     execute if score $isNegative Temporary matches 0 if score $Diff Temporary matches 1.. run tellraw @s [{"text":"落下耐性が","color":"white"},{"score":{"name":"$Diff","objective":"Temporary"},"color":"aqua"},{"text":"%増加した","color":"white"}]
     execute if score $isNegative Temporary matches 1 if score $Diff Temporary matches 1.. run tellraw @s [{"text":"落下耐性が","color":"white"},{"score":{"name":"$Diff","objective":"Temporary"},"color":"aqua"},{"text":"%減少した","color":"white"}]
+
+# 適用
+    data modify storage api: Argument set value {Amount:-1,UUID:[I;1,1,2,0],Operation:"multiply_base"}
+    execute store result storage api: Argument.Amount double 0.01 run scoreboard players get $Bonus Temporary
+    function api:modifier/fall_resistance/add
+
 # リセット
     scoreboard players reset $Diff Temporary
     scoreboard players reset $RemovedAmount Temporary
     scoreboard players reset $isNegative Temporary
-
-# 適用
-    data modify storage api: Argument set value {Amount:-1,UUID:[I;1,1,2,0],Operation:"multiply_base"}
-    scoreboard players operation $Amount Temporary = @s 02.Bonus.05
-    execute store result storage api: Argument.Amount double 0.01 run scoreboard players get @s 02.Bonus.05
-    function api:modifier/fall_resistance/add
-    scoreboard players reset $Amount Temporary
+    scoreboard players reset $Bonus Temporary

@@ -21,4 +21,4 @@
 
 # バフ選択
     scoreboard players add $BlessingUseCount Global 1
-    execute as @a run function asset:artifact/0002.blessing/trigger/show_trigger_chat
+    execute as @a run function asset:artifact/0002.blessing/trigger/show_trigger_chat/

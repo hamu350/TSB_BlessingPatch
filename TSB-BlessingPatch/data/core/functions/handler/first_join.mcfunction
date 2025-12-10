@@ -36,4 +36,4 @@ function metric:user_id
     scoreboard players set @s RespawnEvent 81
 
 # Bls Patch: 初回メッセージ
-    function bls_patch:message
+    function bls_patch:first_join
