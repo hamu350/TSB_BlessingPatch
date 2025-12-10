@@ -95,7 +95,7 @@
     data modify storage bls_patch: Blessing.08.Value set value 2
     data modify storage bls_patch: Blessing.08.ValueSuffix set value "%"
     data modify storage bls_patch: Blessing.08.MaxValue set value 10
-    data modify storage bls_patch: Blessing.08.MaxUse set value 10
+    data modify storage bls_patch: Blessing.08.MaxUse set value 5
 
 # 09: Physical Attack
     # data modify storage bls_patch: Blessing.09.Name set value ##'[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"物理攻撃","font":"default"}]'
