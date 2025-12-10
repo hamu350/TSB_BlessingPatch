@@ -47,16 +47,16 @@
     data modify storage bls_patch: Blessing.03.UpdatePath set value "api:modifier/attack/base/update_bonus"
     data modify storage bls_patch: Blessing.03.Value set value 1
     data modify storage bls_patch: Blessing.03.ValueSuffix set value "%"
-    data modify storage bls_patch: Blessing.03.MaxValue set value 30
-    data modify storage bls_patch: Blessing.03.MaxUse set value 30
+    data modify storage bls_patch: Blessing.03.MaxValue set value 10
+    data modify storage bls_patch: Blessing.03.MaxUse set value 10
 
 # 04: Defense
     data modify storage bls_patch: Blessing.04.Name set value '"防御"'
     data modify storage bls_patch: Blessing.04.UpdatePath set value "api:modifier/defense/base/update_bonus"
     data modify storage bls_patch: Blessing.04.Value set value 1
     data modify storage bls_patch: Blessing.04.ValueSuffix set value "%"
-    data modify storage bls_patch: Blessing.04.MaxValue set value 30
-    data modify storage bls_patch: Blessing.04.MaxUse set value 30
+    data modify storage bls_patch: Blessing.04.MaxValue set value 10
+    data modify storage bls_patch: Blessing.04.MaxUse set value 10
 
 # 05: FallResistance
     data modify storage bls_patch: Blessing.05.Name set value '[{"text":"|"},{"text":"\\u0002","font":"space"},{"text":"落下耐性","font":"default"}]'
