@@ -11,12 +11,22 @@
     function asset:artifact/0002.blessing/trigger/show_trigger_chat/data_get.m with storage bls_patch: Args
 
 # tellraw
-    tellraw @s {\
-        "translate": "%2$s +%3$s%4$s%1$s/%1$s%5$s",\
+    execute if score $SelectCount Temporary < $MaxUse Temporary run tellraw @s {\
+        "translate": "%2$s [+%3$s%4$s%1$s/%1$s%5$s]",\
         "with": [\
             {"text":"\u0002","font":"space"},\
             {"storage": "bls_patch:", "nbt": "Temporary.Blessing.Name", "color": "white", "interpret": true},\
             {"score": {"name": "$Bonus","objective": "Temporary"},"color": "aqua"},\
+            {"storage": "bls_patch:", "nbt": "Temporary.Blessing.ValueSuffix", "color": "white", "interpret": true},\
+            {"storage": "bls_patch:", "nbt": "Temporary.Blessing.MaxValue", "color": "aqua"}\
+        ]\
+    }
+    execute unless score $SelectCount Temporary < $MaxUse Temporary run tellraw @s {\
+        "translate": "%2$s [+%3$s%4$s%1$s/%1$s%5$s]",\
+        "with": [\
+            {"text":"\u0002","font":"space"},\
+            {"storage": "bls_patch:", "nbt": "Temporary.Blessing.Name", "color": "white", "interpret": true},\
+            {"score": {"name": "$Bonus","objective": "Temporary"},"color": "yellow"},\
             {"storage": "bls_patch:", "nbt": "Temporary.Blessing.ValueSuffix", "color": "white", "interpret": true},\
             {"storage": "bls_patch:", "nbt": "Temporary.Blessing.MaxValue", "color": "aqua"}\
         ]\
