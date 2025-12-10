@@ -16,7 +16,7 @@
     }
 
     # 選択回数が最大取得数以上なら選択不能になる
-        execute if score $SelectCount Temporary >= $MaxUse Temporary run data modify storage bls_patch: Text.$(ID) merge value {\
+        execute if score $SelectCount Temporary >= $MaxUse Temporary run data modify storage bls_patch: Text merge value {\
             Select: {"text":"[選ぶ]","color":"gray"},\
             SelectMax: {"text": ""},\
             Value: {"text": "0", "color": "yellow"},\
