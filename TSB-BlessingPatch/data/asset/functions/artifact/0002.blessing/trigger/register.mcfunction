@@ -10,6 +10,7 @@
 # 04: Defense
 # 05: FallResistance
 # 06: MPRegen
+# 07: Heal
 
 # ID(表示順)
     data modify storage bls_patch: ID set value ["01", "02", "03", "04", "05", "06"]
@@ -67,6 +68,14 @@
 # 06: MPRegen
     data modify storage bls_patch: Blessing.06.Name set value "MP回復量"
     data modify storage bls_patch: Blessing.06.UpdatePath set value "api:modifier/mp_regen/update_bonus"
+    data modify storage bls_patch: Blessing.06.Value set value 1
+    data modify storage bls_patch: Blessing.06.ValueSuffix set value "%"
+    data modify storage bls_patch: Blessing.06.MaxValue set value 10
+    data modify storage bls_patch: Blessing.06.MaxUse set value 10
+
+# 07: Heal
+    data modify storage bls_patch: Blessing.06.Name set value "与回復量"
+    data modify storage bls_patch: Blessing.06.UpdatePath set value "api:modifier/heal/update_bonus"
     data modify storage bls_patch: Blessing.06.Value set value 1
     data modify storage bls_patch: Blessing.06.ValueSuffix set value "%"
     data modify storage bls_patch: Blessing.06.MaxValue set value 10
