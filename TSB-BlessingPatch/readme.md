@@ -13,7 +13,8 @@
 
 
 ## 導入方法
-#### ※ 途中導入非対応(今後対応予定)
+#### 途中導入可能(v1.1.0より)
+### ※途中導入する場合、必ずワールド全体のバックアップを取ってから行ってください
 1. 「TSB-BlessingPatch-Basic-vX.Y.X.zip」を[Releases](https://github.com/hamu350/TSB_BlessingPatch/releases)からダウンロード
 1. savesからTheSkyBlessingのワールドファイルを開き、datapacksの中にダウンロードしたファイルを移動する
 1. 導入完了
