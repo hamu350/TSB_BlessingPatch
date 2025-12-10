@@ -11,7 +11,7 @@
         Value: {"storage": "bls_patch:", "nbt": "Temporary.Blessing.Value", "color": "aqua"},\
         ValueSuffix: {"storage": "bls_patch:", "nbt": "Temporary.Blessing.ValueSuffix", "color": "white"},\
         MaxValue: {"storage": "bls_patch:", "nbt": "Temporary.Blessing.MaxValue", "color": "aqua"},\
-        Name: {"storage": "bls_patch:", "nbt": "Temporary.Blessing.Name", "color": "white"},\
+        Name: '{"storage": "bls_patch:", "nbt": "Temporary.Blessing.Name", "color": "white", "interpret": true}',\
         Bonus: {"score": {"name": "$Bonus","objective": "Temporary"},"color": "aqua"},\
     }
 
