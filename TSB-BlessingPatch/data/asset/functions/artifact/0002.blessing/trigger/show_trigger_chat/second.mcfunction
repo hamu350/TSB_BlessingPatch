@@ -21,8 +21,9 @@
 # ページ切り替え
     tellraw @s {"translate": "%1$s", "with": [{"text":"[通常ボーナスを開く]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 200"},"color":"gold"}]}
 
-# reset
+# リセット
     scoreboard players reset $Remain Temporary
+    data remove storage bls_patch: Loop
 
 # リスナー
     schedule function asset:artifact/0002.blessing/trigger/listener 1t
