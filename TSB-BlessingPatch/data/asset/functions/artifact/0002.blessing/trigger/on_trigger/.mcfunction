@@ -36,6 +36,9 @@
     # page2
         execute if score @s 02.Trigger matches 201 run return run function asset:artifact/0002.blessing/trigger/show_trigger_chat/second
 
+# ボーナス選択時のみ音を鳴らす
+    execute at @s run playsound entity.arrow.hit_player master @s ~ ~ ~ 1 0.5
+
 # リセット
     scoreboard players reset @s 02.Trigger
 
