@@ -2,7 +2,7 @@
 #
 # 祝福による補正を更新する
 #
-# @api
+# @patch
 
 #> Diff
 # @private
