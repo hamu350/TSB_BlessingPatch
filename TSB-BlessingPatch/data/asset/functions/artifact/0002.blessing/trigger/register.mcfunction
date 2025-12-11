@@ -20,7 +20,7 @@
 
 # ID(表示順)
     data modify storage bls_patch: ID set value ["01", "02", "03", "04"]
-    data modify storage bls_patch: SecondID set value ["09", "10", "11", "12", "05", "13", "07", "08", "06", "14"]
+    data modify storage bls_patch: SecondID set value ["09", "10", "11", "12", "05", "13", "07", "08", "06", "14", "15", "16"]
     data modify storage bls_patch: All set from storage bls_patch: ID
     data modify storage bls_patch: All append from storage bls_patch: SecondID[]
 
@@ -147,3 +147,19 @@
     data modify storage bls_patch: Blessing.14.ValueSuffix set value "%"
     data modify storage bls_patch: Blessing.14.MaxValue set value 30
     data modify storage bls_patch: Blessing.14.MaxUse set value 10
+
+# 15: BuffDuration
+    data modify storage bls_patch: Blessing.15.Name set value '"バフ効果時間延長"'
+    data modify storage bls_patch: Blessing.15.UpdatePath set value "bls_patch:modifier/buff_duration/update_bonus"
+    data modify storage bls_patch: Blessing.15.Value set value 1
+    data modify storage bls_patch: Blessing.15.ValueSuffix set value "%"
+    data modify storage bls_patch: Blessing.15.MaxValue set value 10
+    data modify storage bls_patch: Blessing.15.MaxUse set value 10
+
+# 16: DebuffDuration
+    data modify storage bls_patch: Blessing.16.Name set value '"デバフ効果時間短縮"'
+    data modify storage bls_patch: Blessing.16.UpdatePath set value "bls_patch:modifier/debuff_duration/update_bonus"
+    data modify storage bls_patch: Blessing.16.Value set value 2
+    data modify storage bls_patch: Blessing.16.ValueSuffix set value "%"
+    data modify storage bls_patch: Blessing.16.MaxValue set value 20
+    data modify storage bls_patch: Blessing.16.MaxUse set value 10
