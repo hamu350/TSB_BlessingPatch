@@ -8,3 +8,8 @@ data modify storage api: Argument.Label set value '"祝福バフを見る"'
 data modify storage api: Argument.Key set value "blessing_view"
 data modify storage api: Argument.Listener set value "bls_patch:blessing_view/"
 function api:button/send
+
+# Reset
+    data remove storage api: Argument.Label
+    data remove storage api: Argument.Key
+    data remove storage api: Argument.Listener
