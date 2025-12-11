@@ -21,6 +21,7 @@
     execute if score @s 02.Trigger matches 1..99 run scoreboard players add @s 02.UseCount 1
 
 # [MAX] 101~199
+    # Triggerの値を途中で100減算
     execute if score @s 02.Trigger matches 101..199 run function asset:artifact/0002.blessing/trigger/on_trigger/max/
 
 # リセット
@@ -39,10 +40,16 @@
 # ボーナス選択時のみ音を鳴らす
     execute at @s run playsound entity.arrow.hit_player master @s ~ ~ ~ 1 0.5
 
+# どのページのボタンが押されたのか記録(MAXとしても途中で100引かれる)
+    execute if score @s 02.Trigger matches 1..4 run data modify storage bls_patch: Page set value 1
+    execute if score @s 02.Trigger matches 5..99 run data modify storage bls_patch: Page set value 2
+
 # リセット
     scoreboard players reset @s 02.Trigger
 
 # 祝福が残っていなければ祝福バフ表示ボタンを送信
     execute unless score @s 02.UseCount < $BlessingUseCount Global run function bls_patch:blessing_view/send_button
 # 祝福がまだ残っていれば選ばせる
-    execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat/
+    execute if score @s 02.UseCount < $BlessingUseCount Global if data storage bls_patch: {Page:1} run function asset:artifact/0002.blessing/trigger/show_trigger_chat/
+    execute if score @s 02.UseCount < $BlessingUseCount Global if data storage bls_patch: {Page:2} run function asset:artifact/0002.blessing/trigger/show_trigger_chat/second
+    data remove storage bls_patch: Page
