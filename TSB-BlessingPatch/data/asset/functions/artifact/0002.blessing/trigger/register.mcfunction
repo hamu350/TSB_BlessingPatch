@@ -20,7 +20,7 @@
 
 # ID(表示順)
     data modify storage bls_patch: ID set value ["01", "02", "03", "04"]
-    data modify storage bls_patch: SecondID set value ["09", "10", "11", "12", "05", "13", "07", "08", "06"]
+    data modify storage bls_patch: SecondID set value ["09", "10", "11", "12", "05", "13", "07", "08", "06", "14"]
     data modify storage bls_patch: All set from storage bls_patch: ID
     data modify storage bls_patch: All append from storage bls_patch: SecondID[]
 
@@ -139,3 +139,11 @@
     data modify storage bls_patch: Blessing.13.ValueSuffix set value "%"
     data modify storage bls_patch: Blessing.13.MaxValue set value 5
     data modify storage bls_patch: Blessing.13.MaxUse set value 5
+
+# 14: Absorption
+    data modify storage bls_patch: Blessing.14.Name set value '"バリア付与量"'
+    data modify storage bls_patch: Blessing.14.UpdatePath set value "bls_patch:modifier/absorption/update_bonus"
+    data modify storage bls_patch: Blessing.14.Value set value 3
+    data modify storage bls_patch: Blessing.14.ValueSuffix set value "%"
+    data modify storage bls_patch: Blessing.14.MaxValue set value 30
+    data modify storage bls_patch: Blessing.14.MaxUse set value 10
