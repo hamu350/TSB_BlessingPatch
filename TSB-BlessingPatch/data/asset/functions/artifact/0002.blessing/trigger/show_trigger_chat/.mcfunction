@@ -19,7 +19,12 @@
     function asset:artifact/0002.blessing/trigger/show_trigger_chat/loop
 
 # ページ切り替え
-    tellraw @s {"translate": "%1$s", "with": [{"text":"[追加ボーナスを開く]","clickEvent":{"action":"run_command","value":"/trigger 02.Trigger set 201"},"color":"gold"}]}
+    tellraw @s {"translate": "%1$s %2$s %3$s %4$s", "with": [\
+        {"text":"ページ:","color":"white"},\
+        {"text":"[1]", "color":"gray"},\
+        {"text":"[2]", "clickEvent": {"action": "run_command", "value": "/trigger 02.Trigger set 201"},"color":"gold"},\
+        {"text":"[3]", "clickEvent": {"action": "run_command", "value": "/trigger 02.Trigger set 202"},"color":"gold"}\
+    ]}
 
 # リセット
     scoreboard players reset $Remain Temporary
