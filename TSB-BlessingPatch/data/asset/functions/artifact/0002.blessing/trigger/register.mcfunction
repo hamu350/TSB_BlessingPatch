@@ -25,7 +25,9 @@
     data modify storage bls_patch: All append from storage bls_patch: SecondID[]
 
 # Bonusの総数+1([ID]で取得できるように1つずらす)
-    data modify storage bls_patch: Reset set value [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    data modify storage bls_patch: Reset set from storage bls_patch: All
+    data modify storage bls_patch: Reset[] set value 0
+    data modify storage bls_patch: Reset prepend value -1
 
 # Name: 名前
 # Update Path: ステータス更新用のPath
