@@ -29,11 +29,11 @@
 
 function metric:user_id
 
+# Bls Patch: 初回ログイン
+    function bls_patch:first_join
+
 # 共通Join処理
     function core:handler/join
 
 # リスポーンイベントが初回に発火しないように
     scoreboard players set @s RespawnEvent 81
-
-# Bls Patch: 初回メッセージ
-    function bls_patch:first_join
