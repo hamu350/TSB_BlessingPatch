@@ -153,9 +153,9 @@
 # 15: BuffDuration
     data modify storage bls_patch: Blessing.15.Name set value '"バフ効果時間延長"'
     data modify storage bls_patch: Blessing.15.UpdatePath set value "bls_patch:modifier/buff_duration/update_bonus"
-    data modify storage bls_patch: Blessing.15.Value set value 1
+    data modify storage bls_patch: Blessing.15.Value set value 2
     data modify storage bls_patch: Blessing.15.ValueSuffix set value "%"
-    data modify storage bls_patch: Blessing.15.MaxValue set value 10
+    data modify storage bls_patch: Blessing.15.MaxValue set value 20
     data modify storage bls_patch: Blessing.15.MaxUse set value 10
 
 # 16: DebuffDuration
