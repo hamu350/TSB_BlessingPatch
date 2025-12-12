@@ -161,7 +161,7 @@
 # 16: DebuffDuration
     data modify storage bls_patch: Blessing.16.Name set value '"デバフ効果時間短縮"'
     data modify storage bls_patch: Blessing.16.UpdatePath set value "bls_patch:modifier/debuff_duration/update_bonus"
-    data modify storage bls_patch: Blessing.16.Value set value 2
+    data modify storage bls_patch: Blessing.16.Value set value 3
     data modify storage bls_patch: Blessing.16.ValueSuffix set value "%"
-    data modify storage bls_patch: Blessing.16.MaxValue set value 20
+    data modify storage bls_patch: Blessing.16.MaxValue set value 30
     data modify storage bls_patch: Blessing.16.MaxUse set value 10
