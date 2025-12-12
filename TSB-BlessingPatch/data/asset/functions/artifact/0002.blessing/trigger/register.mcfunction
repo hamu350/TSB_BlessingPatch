@@ -83,23 +83,23 @@
     data modify storage bls_patch: Blessing.06.UpdatePath set value "api:modifier/mp_regen/update_bonus"
     data modify storage bls_patch: Blessing.06.Value set value 1
     data modify storage bls_patch: Blessing.06.ValueSuffix set value "%"
-    data modify storage bls_patch: Blessing.06.MaxValue set value 10
-    data modify storage bls_patch: Blessing.06.MaxUse set value 10
+    data modify storage bls_patch: Blessing.06.MaxValue set value 15
+    data modify storage bls_patch: Blessing.06.MaxUse set value 15
 
 # 07: Heal
     data modify storage bls_patch: Blessing.07.Name set value '"与回復量"'
     data modify storage bls_patch: Blessing.07.UpdatePath set value "api:modifier/heal/update_bonus"
-    data modify storage bls_patch: Blessing.07.Value set value 1
+    data modify storage bls_patch: Blessing.07.Value set value 4
     data modify storage bls_patch: Blessing.07.ValueSuffix set value "%"
-    data modify storage bls_patch: Blessing.07.MaxValue set value 10
-    data modify storage bls_patch: Blessing.07.MaxUse set value 10
+    data modify storage bls_patch: Blessing.07.MaxValue set value 20
+    data modify storage bls_patch: Blessing.07.MaxUse set value 5
 
 # 08: ReceiveHeal
     data modify storage bls_patch: Blessing.08.Name set value '"被回復量"'
     data modify storage bls_patch: Blessing.08.UpdatePath set value "api:modifier/receive_heal/update_bonus"
-    data modify storage bls_patch: Blessing.08.Value set value 2
+    data modify storage bls_patch: Blessing.08.Value set value 5
     data modify storage bls_patch: Blessing.08.ValueSuffix set value "%"
-    data modify storage bls_patch: Blessing.08.MaxValue set value 10
+    data modify storage bls_patch: Blessing.08.MaxValue set value 25
     data modify storage bls_patch: Blessing.08.MaxUse set value 5
 
 # 09: Physical Attack
