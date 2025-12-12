@@ -73,9 +73,9 @@
 # 05: FallResistance
     data modify storage bls_patch: Blessing.05.Name set value '"落下耐性"'
     data modify storage bls_patch: Blessing.05.UpdatePath set value "api:modifier/fall_resistance/update_bonus"
-    data modify storage bls_patch: Blessing.05.Value set value 5
+    data modify storage bls_patch: Blessing.05.Value set value 8
     data modify storage bls_patch: Blessing.05.ValueSuffix set value "%"
-    data modify storage bls_patch: Blessing.05.MaxValue set value 50
+    data modify storage bls_patch: Blessing.05.MaxValue set value 80
     data modify storage bls_patch: Blessing.05.MaxUse set value 10
 
 # 06: MPRegen
