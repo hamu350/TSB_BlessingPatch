@@ -139,8 +139,8 @@
     data modify storage bls_patch: Blessing.13.UpdatePath set value "bls_patch:modifier/speed/update_bonus"
     data modify storage bls_patch: Blessing.13.Value set value 1
     data modify storage bls_patch: Blessing.13.ValueSuffix set value "%"
-    data modify storage bls_patch: Blessing.13.MaxValue set value 5
-    data modify storage bls_patch: Blessing.13.MaxUse set value 5
+    data modify storage bls_patch: Blessing.13.MaxValue set value 10
+    data modify storage bls_patch: Blessing.13.MaxUse set value 10
 
 # 14: Absorption
     data modify storage bls_patch: Blessing.14.Name set value '"バリア付与量"'
