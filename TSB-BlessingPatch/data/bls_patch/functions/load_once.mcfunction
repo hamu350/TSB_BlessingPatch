@@ -8,6 +8,9 @@
 # @private
     #declare score $02.SelectCount
 
+# バージョンを設定
+    data modify storage bls_patch: Version set value 1
+
 # これまでの祝福仕様数を取得
     scoreboard players operation $BlessingUseCount Temporary += $02.MaxHealth 02.SelectCount
     scoreboard players operation $BlessingUseCount Temporary += $02.MaxMP 02.SelectCount

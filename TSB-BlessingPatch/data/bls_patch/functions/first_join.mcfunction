@@ -11,3 +11,5 @@
     function oh_my_dat:please
     data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.SelectCount set from storage bls_patch: Reset
     data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.Bonus set from storage bls_patch: Reset
+# バージョンを設定
+    data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.Version set from storage bls_patch: Version
