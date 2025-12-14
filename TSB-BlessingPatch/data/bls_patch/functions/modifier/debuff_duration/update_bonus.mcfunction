@@ -14,7 +14,7 @@
 # 差分にする
     function oh_my_dat:please
     execute store result score $Bonus Temporary run data get storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.Bonus[16]
-    execute store result score $BeforeAmount Temporary run data get storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.BeforeAbsorption[16]
+    execute store result score $BeforeAmount Temporary run data get storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.BeforeDebuffDuration
     data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.BeforeDebuffDuration set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.Bonus[16]
     execute unless score $BeforeAmount Temporary matches -2147483648..2147483647 run scoreboard players set $BeforeAmount Temporary 0
     scoreboard players operation $Diff Temporary = $Bonus Temporary
