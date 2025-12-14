@@ -11,7 +11,7 @@
     function asset:artifact/0002.blessing/trigger/show_trigger_chat/data_get.m with storage bls_patch: Args
 
 # update
-    data modify storage bls_patch: Args._ set from storage bls_patch: UpdatePath
+    data modify storage bls_patch: Args._ set from storage bls_patch: Temporary.Blessing.UpdatePath
     function lib:macro/call.m with storage bls_patch: Args
 
 # reset
