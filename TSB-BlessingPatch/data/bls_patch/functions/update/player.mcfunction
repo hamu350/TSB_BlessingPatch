@@ -23,4 +23,4 @@
         execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat/
 
 # メッセージ
-    tellraw @s {"text": "[TSB Blessing Patch] アップデートを検知したため、能力ボーナスをリセットしました", "color": "gold"}
+    tellraw @s [{"text": "[TSB Blessing Patch]"},{"text":" アップデートを検知したため、\n能力ボーナスをリセットしました", "color": "white"}]
