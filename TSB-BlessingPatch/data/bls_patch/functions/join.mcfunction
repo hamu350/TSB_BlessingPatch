@@ -13,7 +13,7 @@
 
 # バージョンを設定
     execute store success storage bls_patch: Update byte 1 run data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].BlsPatch.Version set from storage bls_patch: Version
-    execute if data storage bls_patch: {Update: 1b} run function bls_patch:update/player
+    execute if data storage bls_patch: {Update: 0b} run function bls_patch:update/player
     data remove storage bls_patch: Update
 
 # ボーナスの更新
