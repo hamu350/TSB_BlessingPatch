@@ -47,10 +47,8 @@
     # ["09", "10", "11", "12", "05", "13"]
     # ["07", "08", "06", "14", "15", "16"]
     execute if score @s 02.Trigger matches 1..4 run data modify storage bls_patch: Page set value 1
-    execute if score @s 02.Trigger matches 5 run data modify storage bls_patch: Page set value 2
-    execute if score @s 02.Trigger matches 9..13 run data modify storage bls_patch: Page set value 2
-    execute if score @s 02.Trigger matches 6..8 run data modify storage bls_patch: Page set value 3
-    execute if score @s 02.Trigger matches 14..16 run data modify storage bls_patch: Page set value 3
+    execute if score @s 02.Trigger matches 5..8 run data modify storage bls_patch: Page set value 2
+    execute if score @s 02.Trigger matches 13..16 run data modify storage bls_patch: Page set value 3
 
 # リセット
     scoreboard players reset @s 02.Trigger
