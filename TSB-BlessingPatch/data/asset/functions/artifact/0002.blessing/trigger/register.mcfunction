@@ -30,7 +30,9 @@
     data modify storage bls_patch: All append from storage bls_patch: ThirdID[]
 
 # Bonusの総数+1([ID]で取得できるように1つずらす)
-    data modify storage bls_patch: Reset set from storage bls_patch: All
+    # 物魔消したので調整
+    data modify storage bls_patch: Reset set value [0, 0, 0, 0]
+    data modify storage bls_patch: Reset append from storage bls_patch: All
     data modify storage bls_patch: Reset[] set value 0
     data modify storage bls_patch: Reset prepend value -1
 
