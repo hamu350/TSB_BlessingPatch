@@ -10,5 +10,5 @@
 # バージョンを設定(ここだけ変えればいい)
     execute store success storage bls_patch: Update byte 1 run data modify storage bls_patch: Version set value 1
 # update
-    execute if data storage bls_patch: {Update: 0b} run function bls_patch:update/
+    execute if data storage bls_patch: {Update: 1b} run function bls_patch:update/
     data remove storage bls_patch: Update
