@@ -2,9 +2,10 @@
 
 ### ※この作品はTheSkyBlessingの二次創作です
 
-## このパッチでは3つの機能が追加されています
+## このパッチでは4つの機能と8つの能力ボーナスが追加されています
 - 祝福による能力ボーナスの選択が一人一人行えるようになる</br>
 本来全員同じ補正が掛かるところが、個人個人で選択できるようになります
+- 祝福による能力ボーナスの確認</br>
 - 祝福による能力ボーナスの再振り分け</br>
 神々の肖像画がある部屋にて可能です
 - 祝福による能力ボーナスの一括振り分け</br>
@@ -12,4 +13,10 @@
 
 
 ## 導入方法
-現在TSB Blessing Patchは公開されていませんが、[TSB Blessing Patch Basic v1.0.1](https://github.com/hamu350/TSB_BlessingPatch/releases/tag/Basic_v1.0.1) が公開中です
+#### 途中導入可能
+### ※途中導入する場合、必ずワールド全体のバックアップを取ってから行ってください
+1. 「TSB-BlessingPatch-vX.Y.X.zip」を[Releases](https://github.com/hamu350/TSB_BlessingPatch/releases)からダウンロード
+1. savesからTheSkyBlessingのワールドファイルを開き、datapacksの中にダウンロードしたファイルを移動する
+1. 導入完了
+
+TheSkyBlessingの対応バージョンは1.0.4です。それ以前の動作チェックはしておりません。
