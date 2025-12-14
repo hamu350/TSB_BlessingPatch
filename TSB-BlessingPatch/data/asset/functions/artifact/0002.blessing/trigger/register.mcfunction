@@ -31,7 +31,7 @@
 
 # Bonusの総数+1([ID]で取得できるように1つずらす)
     # 物魔消したので調整
-    data modify storage bls_patch: Reset set value [0, 0, 0, 0]
+    data modify storage bls_patch: Reset set value ["", "", "", ""]
     data modify storage bls_patch: Reset append from storage bls_patch: All[]
     data modify storage bls_patch: Reset[] set value 0
     data modify storage bls_patch: Reset prepend value -1
