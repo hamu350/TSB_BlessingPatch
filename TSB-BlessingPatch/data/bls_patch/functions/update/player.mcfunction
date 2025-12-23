@@ -19,8 +19,8 @@
         data modify storage bls_patch: Loop set from storage bls_patch: All
         function bls_patch:blessing_reset/loop
 
-    # 再取得
-        execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat/
+    # 再取得はrejoin_processで自動的に行われる
+        # execute if score @s 02.UseCount < $BlessingUseCount Global run function asset:artifact/0002.blessing/trigger/show_trigger_chat/
 
 # メッセージ
     tellraw @s [{"text": "[TSB Blessing Patch]", "color":"gold"},{"text":"\nアップデートを検知したため、能力ボーナスをリセットしました。", "color": "white"}]
