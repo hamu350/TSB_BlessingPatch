@@ -7,7 +7,7 @@
 # first load
     execute unless data storage bls_patch: Blessing run function bls_patch:load_once
 
-# バージョンを設定(ここだけ変えればいい)
+# バージョンを設定(こことload_onceだけ変えればいい)
     execute store success storage bls_patch: Update byte 1 run data modify storage bls_patch: Version set value 2
 # update
     execute if data storage bls_patch: {Update: 1b} run function bls_patch:update/

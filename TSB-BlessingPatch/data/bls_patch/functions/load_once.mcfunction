@@ -9,7 +9,7 @@
     #declare score $02.SelectCount
 
 # バージョンを設定
-    data modify storage bls_patch: Version set value 1
+    data modify storage bls_patch: Version set value 2
 
 # これまでの祝福仕様数を取得
     scoreboard players operation $BlessingUseCount Temporary += $02.MaxHealth 02.SelectCount
